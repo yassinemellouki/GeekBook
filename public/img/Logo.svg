@@ -1,0 +1,272 @@
+<svg id="GeekBook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 611.2 428">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: green;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 9px;
+	stroke-dashoffset: 200px;
+    	stroke-dasharray: 199px;
+      }
+	.cls-2{
+		animation: cpuAnim 4s .5s linear forwards;
+	}
+	.cls-2:nth-child(2){
+		animation: cpuAnim 4s linear 1s forwards;
+	}
+	.cls-2:nth-child(5){
+		animation: cpuAnim 4s linear 1.5s forwards;
+	}
+	.cls-2:nth-child(7){
+		animation: cpuAnim 4s linear .75s forwards;
+	}
+	.cls-2:nth-child(8){
+		animation: cpuAnim 4s linear .5s forwards;
+	}
+	.cls-2:nth-child(9){
+		animation: cpuAnim 4s linear .85s forwards;
+	}
+	.cls-2:nth-child(11){
+		animation: cpuAnim 4s linear 2s forwards;
+	}
+	.cls-2:nth-child(13){
+		animation: cpuAnim 4s linear 1.3s forwards;
+	}
+	@keyframes cpuAnim{
+		0%{
+			stroke-dashoffset: 200px;
+		}
+		100%{
+			stroke-dashoffset: 100px;
+		}
+	}
+
+      .cls-2 {
+        stroke: green;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+	.pressed_key{
+	fill: green
+	}
+
+      .cls-4 {
+        stroke: #000;
+      }
+    </style>
+  </defs>
+  <title>Logo3</title>
+  <g id="CPU">
+    <g id="core">
+      <path class="cls-1" d="M207.2,194.8H135.7a4.1,4.1,0,0,1-4-4.2h0v-76a4.1,4.1,0,0,1,3.9-4.3h71.6a4.2,4.2,0,0,1,4.1,4.3h0v76a4.2,4.2,0,0,1-4.1,4.3Zm-67.4-8.6h63.4V118.8H139.8Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M191.3,177.9H151.7a4.2,4.2,0,0,1-4.1-4.3h0V131.4a4.2,4.2,0,0,1,4.1-4.3h39.6a4.3,4.3,0,0,1,4.1,4.3v42.2a4.2,4.2,0,0,1-4.1,4.3Zm-35.6-8.6h31.6V135.7H155.7Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M178.7,164.5H164.2a4.1,4.1,0,0,1-4-4.2h0V144.8a4.1,4.1,0,0,1,3.9-4.3h14.6a4.2,4.2,0,0,1,4.1,4.3h0v15.4a4.2,4.2,0,0,1-4.1,4.3Zm-10.4-8.6h6.4v-6.8h-6.4Z" transform="translate(0 0)"/>
+    </g>
+    <g id="lines">
+      <line class="cls-2" x1="134" y1="152.5" x2="98" y2="152.5"/>
+      <polyline class="cls-2" points="134 169.3 92.1 169.3 72.2 149.4"/>
+      <polyline class="cls-2" points="134 183.8 101 183.8 84 200.9 62.3 200.9"/>
+      <line class="cls-2" x1="145.8" y1="192.3" x2="145.8" y2="212.6"/>
+      <polyline class="cls-2" points="162.1 191 162.1 212.6 144.7 229.6"/>
+      <polyline class="cls-2" points="178.1 191 178.1 229.6 164.9 242.7 164.9 258.2"/>
+      <polyline class="cls-2" points="190.1 191.4 190.1 219.7 206.6 234.2"/>
+      <polyline class="cls-2" points="208.4 173.9 250.1 173.9 259.9 183.8 282.5 183.8"/>
+      <polyline class="cls-2" points="208.4 152.5 260.1 152.5 280.8 131.9 292.7 131.9"/>
+      <polyline class="cls-2" points="208.6 131.3 240.5 131.3 250.8 119"/>
+      <polyline class="cls-2" points="178.1 113.6 178.1 87.5 191.8 73.9 191.8 53.3"/>
+      <polyline class="cls-2" points="195.2 113.6 195.2 96.1 210.9 80.4"/>
+      <polyline class="cls-2" points="134 131.3 107.9 131.3 93.2 116.6 73 116.6"/>
+      <polyline class="cls-2" points="159.1 113.6 159.1 69.9 145.8 56.7 145.8 31.3"/>
+    </g>
+  </g>
+  <g id="Lines-2" data-name="Lines">
+    <path class="w_line cls-1" d="M363.6,234.1h0v8.7h0Z" transform="translate(0 0)"/>
+    <path class="w_line cls-1" d="M363.6,212.3h0V221h0Z" transform="translate(0 0)"/>
+    <path class="w_line cls-1" d="M363.6,190.4h0v8.7h0Z" transform="translate(0 0)"/>
+    <path class="w_line cls-1" d="M363.6,168.6h0v8.7h0Z" transform="translate(0 0)"/>
+    <path class="w_line cls-1" d="M363.6,146.8h0v8.7h0Z" transform="translate(0 0)"/>
+  </g>
+  <g id="Keyboard">
+    <g id="pressed_keys">
+      <path class="cls-3" d="M402.9,66.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M420.9,66.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M438.9,66.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M455.9,66.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M473.9,66.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M491.9,66.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M508.9,66.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M367.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M384.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M402.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M385.9,66.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M420.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M455.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M473.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M490.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M508.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M490.9,95.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M367.9,95.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M438.9,80.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M384.9,94.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M508.9,95.9h8.9v7.5h-8.9Z" transform="translate(0 0)"/>
+      <path class="cls-3" d="M407.3,95.9h74.3v7.5H407.3Z" transform="translate(0 0)"/>
+    </g>
+    <g id="keys">
+      <path class="cls-1" d="M376.8,76h-8.9a1.7,1.7,0,0,1-1.9-1.6V66.9a1.7,1.7,0,0,1,1.9-1.6h8.9a1.8,1.8,0,0,1,1.9,1.5h0v7.5a1.6,1.6,0,0,1-1.8,1.6Zm-7-3.1H375V68.5h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M394.5,76h-9a1.8,1.8,0,0,1-1.8-1.6h0V66.9a1.8,1.8,0,0,1,1.8-1.6h9a1.8,1.8,0,0,1,1.8,1.6h0v7.5a1.8,1.8,0,0,1-1.8,1.6Zm-7.1-3.1h5.2V68.5h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M412.1,76h-8.9a1.8,1.8,0,0,1-1.9-1.5h0V66.9a1.6,1.6,0,0,1,1.8-1.6h9a1.7,1.7,0,0,1,1.9,1.6v7.5A1.7,1.7,0,0,1,412.1,76ZM405,72.9h5.2V68.5H405Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M429.7,76h-8.9a1.7,1.7,0,0,1-1.9-1.6V66.9a1.7,1.7,0,0,1,1.9-1.6h8.9a1.8,1.8,0,0,1,1.9,1.5h0v7.5a1.6,1.6,0,0,1-1.8,1.6Zm-7-3.1h5.2V68.5h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M447.4,76h-9a1.8,1.8,0,0,1-1.8-1.6h0V66.9a1.8,1.8,0,0,1,1.8-1.6h9a1.8,1.8,0,0,1,1.8,1.6h0v7.5a1.8,1.8,0,0,1-1.8,1.6Zm-7.1-3.1h5.2V68.5h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M465,76h-8.9a1.8,1.8,0,0,1-1.9-1.5h0V66.9a1.6,1.6,0,0,1,1.8-1.6h9a1.7,1.7,0,0,1,1.9,1.6v7.5A1.7,1.7,0,0,1,465,76Zm-7.1-3.1h5.2V68.5h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M482.6,76h-8.9a1.7,1.7,0,0,1-1.9-1.6V66.9a1.7,1.7,0,0,1,1.9-1.6h8.9a1.8,1.8,0,0,1,1.9,1.5h0v7.5a1.6,1.6,0,0,1-1.8,1.6Zm-7-3.1h5.2V68.5h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M500.3,76h-9a1.8,1.8,0,0,1-1.8-1.6h0V66.9a1.8,1.8,0,0,1,1.8-1.6h9a1.8,1.8,0,0,1,1.8,1.6h0v7.5a1.8,1.8,0,0,1-1.8,1.6Zm-7.1-3.1h5.2V68.5h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M517.9,76H509a1.8,1.8,0,0,1-1.9-1.5h0V66.9a1.6,1.6,0,0,1,1.8-1.6h9a1.7,1.7,0,0,1,1.9,1.6v7.5A1.7,1.7,0,0,1,517.9,76Zm-7.1-3.1H516V68.5h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M376.8,90.3h-8.9a1.8,1.8,0,0,1-1.9-1.5V81.2a1.8,1.8,0,0,1,1.9-1.5h8.9a1.7,1.7,0,0,1,1.9,1.5h0v7.6a1.7,1.7,0,0,1-1.9,1.5Zm-7-3.1H375V82.8h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M394.5,90.3h-9a1.7,1.7,0,0,1-1.8-1.5V81.2a1.7,1.7,0,0,1,1.8-1.5h9a1.7,1.7,0,0,1,1.8,1.5v7.6A1.7,1.7,0,0,1,394.5,90.3Zm-7.1-3.1h5.2V82.8h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M412.1,90.3h-8.9a1.7,1.7,0,0,1-1.9-1.5h0V81.2a1.7,1.7,0,0,1,1.9-1.5h8.9a1.8,1.8,0,0,1,1.9,1.5v7.6A1.8,1.8,0,0,1,412.1,90.3ZM405,87.2h5.2V82.8H405Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M429.7,90.3h-8.9a1.8,1.8,0,0,1-1.9-1.5V81.2a1.8,1.8,0,0,1,1.9-1.5h8.9a1.7,1.7,0,0,1,1.9,1.5h0v7.6a1.7,1.7,0,0,1-1.9,1.5Zm-7-3.1h5.2V82.8h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M447.4,90.3h-9a1.7,1.7,0,0,1-1.8-1.5V81.2a1.7,1.7,0,0,1,1.8-1.5h9a1.7,1.7,0,0,1,1.8,1.5v7.6A1.7,1.7,0,0,1,447.4,90.3Zm-7.1-3.1h5.2V82.8h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M465,90.3h-8.9a1.7,1.7,0,0,1-1.9-1.5h0V81.2a1.7,1.7,0,0,1,1.9-1.5H465a1.8,1.8,0,0,1,1.9,1.5v7.6A1.8,1.8,0,0,1,465,90.3Zm-7.1-3.1h5.2V82.8h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M482.6,90.3h-8.9a1.8,1.8,0,0,1-1.9-1.5V81.2a1.8,1.8,0,0,1,1.9-1.5h8.9a1.7,1.7,0,0,1,1.9,1.5h0v7.6a1.7,1.7,0,0,1-1.9,1.5Zm-7-3.1h5.2V82.8h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M500.3,90.3h-9a1.7,1.7,0,0,1-1.8-1.5V81.2a1.7,1.7,0,0,1,1.8-1.5h9a1.7,1.7,0,0,1,1.8,1.5v7.6A1.7,1.7,0,0,1,500.3,90.3Zm-7.1-3.1h5.2V82.8h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M517.9,90.3H509a1.7,1.7,0,0,1-1.9-1.5h0V81.2a1.7,1.7,0,0,1,1.9-1.5h8.9a1.8,1.8,0,0,1,1.9,1.5v7.6A1.8,1.8,0,0,1,517.9,90.3Zm-7.1-3.1H516V82.8h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M376.8,104.7h-8.9a1.7,1.7,0,0,1-1.9-1.6V95.6a1.7,1.7,0,0,1,1.9-1.6h8.9a1.8,1.8,0,0,1,1.9,1.5h0v7.5a1.6,1.6,0,0,1-1.8,1.6Zm-7-3.2H375V97.1h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M394.5,104.7h-9a1.8,1.8,0,0,1-1.8-1.6h0V95.6a1.8,1.8,0,0,1,1.8-1.6h9a1.8,1.8,0,0,1,1.8,1.6h0v7.5a1.8,1.8,0,0,1-1.8,1.6Zm-7.1-3.2h5.2V97.1h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M500.3,104.7h-9a1.8,1.8,0,0,1-1.8-1.6h0V95.6a1.8,1.8,0,0,1,1.8-1.6h9a1.8,1.8,0,0,1,1.8,1.6h0v7.5a1.8,1.8,0,0,1-1.8,1.6Zm-7.1-3.2h5.2V97.1h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M517.9,104.7H509a1.8,1.8,0,0,1-1.9-1.5h0V95.6a1.6,1.6,0,0,1,1.8-1.6h9a1.7,1.7,0,0,1,1.9,1.6v7.5A1.7,1.7,0,0,1,517.9,104.7Zm-7.1-3.2H516V97.1h-5.2Z" transform="translate(0 0)"/>
+      <path class="cls-1" d="M483.4,106.1H405.6a1.7,1.7,0,0,1-1.9-1.6V95.6a1.7,1.7,0,0,1,1.9-1.6h77.8a1.8,1.8,0,0,1,1.9,1.5h0v8.9a1.6,1.6,0,0,1-1.8,1.6ZM407.5,103h74.1V97.1H407.5Z" transform="translate(0 0)"/>
+    </g>
+    <path id="keyboard_shape" class="cls-1" d="M534.3,115.1H354.7a1.8,1.8,0,0,1-1.8-1.6h0V59.6a1.8,1.8,0,0,1,1.8-1.6H534.3a1.8,1.8,0,0,1,1.8,1.6h0v53.9a1.8,1.8,0,0,1-1.8,1.6ZM356.6,112H532.4V61.1H356.6Z" transform="translate(0 0)"/>
+  </g>
+  <path id="Book_shape" class="cls-1" d="M572.4,31.1V0H371.6a76.9,76.9,0,0,0-47.5,16,73.5,73.5,0,0,0-10,9.3c-1.6,1.9-3.2,3.8-4.6,5.8a63.3,63.3,0,0,0-3.9,6.1c-1.2-2.1-2.5-4.1-3.9-6.1a66.1,66.1,0,0,0-4.7-5.8A73.5,73.5,0,0,0,287,16,76.1,76.1,0,0,0,255.2,1.6L77.3,0H38.7V31.1H0V402H265.7c3.9,14.9,18.4,26,35.6,26h8.6c17.2,0,31.6-11.1,35.5-26H611.2V31.1ZM314.1,61.5c.8-5,3.1-9.9,5.3-14.4a53.2,53.2,0,0,1,12.2-16,59.6,59.6,0,0,1,40-15.1H555.3V275.4H371.6c-23.1,0-43.8,9.8-57.5,25.2ZM555.3,328.6v13.3H314.2c1.7-28.1,26.8-50.5,57.4-50.5H555.3v21.3H387v15.9ZM55.9,16l199.3,2a59.3,59.3,0,0,1,24.3,13.1,53.2,53.2,0,0,1,12.2,16c2.3,4.5,4.5,9.4,5.3,14.4V300.6a76.5,76.5,0,0,0-57.4-25.2H55.9Zm0,312.6H224.1V312.7H55.9V291.4H239.6c30.6,0,55.6,22.4,57.3,50.5H55.9ZM594,386H329.3v8c0,10-8.7,18-19.4,18h-8.6c-10.7,0-19.5-8-19.5-18v-8H17.1V47.1H38.7V357.8H572.4V47.1H594Z" transform="translate(0 0)"/>
+  <path class="cls-4" d="M98,152.5" transform="translate(0 0)"/>
+<script>
+// <![CDATA[
+	// Writing Lines Animation
+	var lines = document.getElementsByClassName("w_line"),
+		defaultDvalue = [];
+	for(i=0; i<lines.length; i++){
+		defaultDvalue.push(lines[i].getAttribute("d"))
+	}
+	var writingL1 = function(ele){
+		var dAttribute = ele.getAttribute("d"),
+			newNumb = 0;
+		var writingAnim = setInterval(function(){
+			newNumb++
+			dAttribute = `m363.6 146.8h${newNumb}v8.68h-${newNumb}z`;
+			ele.setAttribute("d", dAttribute)
+		if(newNumb == 163){
+			clearInterval(writingAnim)
+		}
+		},20)
+		console.log(dAttribute)
+	}
+	var writingL2 = function(ele){
+		setTimeout(function(){
+		var dAttribute = ele.getAttribute("d"),
+			newNumb = 0;
+		var writingAnim = setInterval(function(){
+			newNumb++
+			dAttribute = `m363.6 168.6h${newNumb}v8.68h-${newNumb}z`;
+			ele.setAttribute("d", dAttribute)
+		if(newNumb == 55){
+			clearInterval(writingAnim)
+		}
+		},20)
+				},3200)
+	}
+	var writingL3 = function(ele){
+		setTimeout(function(){
+		var dAttribute = ele.getAttribute("d"),
+			newNumb = 0;
+		var writingAnim = setInterval(function(){
+			newNumb++
+			dAttribute = `m363.6 190.6h${newNumb}v8.68h-${newNumb}z`;
+			ele.setAttribute("d", dAttribute)
+		if(newNumb == 133){
+			clearInterval(writingAnim)
+		}
+		},20)
+				},4400)
+	}
+	var writingL4 = function(ele){
+		setTimeout(function(){
+		var dAttribute = ele.getAttribute("d"),
+			newNumb = 0;
+		var writingAnim = setInterval(function(){
+			newNumb++
+			dAttribute = `m363.6 212.6h${newNumb}v8.68h-${newNumb}z`;
+			ele.setAttribute("d", dAttribute)
+		if(newNumb == 155){
+			clearInterval(writingAnim)
+		}
+		},20)
+				},7000)
+	}
+
+	var writingL5 = function(ele){
+		setTimeout(function(){
+		var dAttribute = ele.getAttribute("d"),
+			newNumb = 0;
+		var writingAnim = setInterval(function(){
+			newNumb++
+			dAttribute = `m363.6 234.6h${newNumb}v8.68h-${newNumb}z`;
+			ele.setAttribute("d", dAttribute)
+		if(newNumb == 75){
+			clearInterval(writingAnim)
+		}
+		},20)
+				},9900)
+	}
+
+function linesEffect(){
+
+		first_draw = setTimeout(function(){
+			writingL1(lines[4])
+			writingL2(lines[3])
+			writingL3(lines[2])
+			writingL4(lines[1])
+			writingL5(lines[0])
+		}, 10)
+
+
+
+	logo_effect = setInterval(function(){
+		for(i=0; i<lines.length; i++){
+			lines[i].setAttribute("d", defaultDvalue[i])
+		}
+
+		writingL1(lines[4])
+		writingL2(lines[3])
+		writingL3(lines[2])
+		writingL4(lines[1])
+		writingL5(lines[0])
+
+	},12000)
+	console.log("focused")
+}
+window.addEventListener("load", linesEffect)
+
+window.addEventListener("blur", function(){
+})
+
+	// Keyboad Animation
+	var pres_keys = document.querySelectorAll('#pressed_keys path');
+	setInterval(function(){
+		var randomkey = Math.floor(Math.random()*22)
+		for(i=0; i<pres_keys.length; i++){
+			pres_keys[i].classList.remove("pressed_key")
+		}
+		pres_keys[randomkey].classList.add("pressed_key")
+	},200)
+
+// ]]>
+</script>
+</svg>

@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
-import Logo from "../img/Logo.svg"
+import Logo from "../img/Logo.svg";
+import ReactSVG from 'react-svg'
+
+
 class Header extends Component {
   render() {
     return (
       <header>
         <div className="logo">
           <div className="logo-img">
-					<object height="150" type="image/svg+xml" data={Logo}></object>
+				<ReactSVG src={Logo}/>
+			{/*<object height="150" type="image/svg+xml" data={Logo}></object>*/}
           </div>
         </div>
         <div className="header-btns">

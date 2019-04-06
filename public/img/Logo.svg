@@ -2,9 +2,8 @@
   <defs>
     <style>
       .cls-1 {
-        fill: green;
+        fill: white;
       }
-
       .cls-2, .cls-4 {
         fill: none;
         stroke-linecap: round;
@@ -47,14 +46,14 @@
 	}
 
       .cls-2 {
-        stroke: green;
+        stroke: white;
       }
 
       .cls-3 {
         fill: #fff;
       }
 	.pressed_key{
-	fill: green
+	fill: white
 	}
 
       .cls-4 {
@@ -166,7 +165,6 @@
 			clearInterval(writingAnim)
 		}
 		},20)
-		console.log(dAttribute)
 	}
 	var writingL2 = function(ele){
 		setTimeout(function(){
@@ -250,12 +248,9 @@ function linesEffect(){
 		writingL5(lines[0])
 
 	},12000)
-	console.log("focused")
 }
-window.addEventListener("load", linesEffect)
 
-window.addEventListener("blur", function(){
-})
+linesEffect()
 
 	// Keyboad Animation
 	var pres_keys = document.querySelectorAll('#pressed_keys path');

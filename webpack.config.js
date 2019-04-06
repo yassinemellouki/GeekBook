@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require('Html-webpack-plugin');
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -24,32 +24,31 @@ module.exports = {
           },
         ],
       },
-			{
-				test: /\.scss$/,
-				use:[
-					{
-						loader: MiniCssExtractPlugin.loader,
-					},
-					{
-						loader: "css-loader"
-					},
-					{
-						loader: "sass-loader"
-					}
-				]
-			},
-			{
-				test: /\.(gif|png|jpe?g|svg)$/i,
-				use: [
-					{
-
-						loader:'file-loader',
-						options: {
-							name: 'img/[name].[ext]'
-						}
-					},
-				]
-			}
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'img/[name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -57,13 +56,13 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
     }),
-		new MiniCssExtractPlugin({
-			filename: 'style/[name].css'
-		})
+    new MiniCssExtractPlugin({
+      filename: 'style/[name].css',
+    }),
   ],
-	devServer: {
-		contentBase: path.join(__dirname,'public'),
-		compress: true,
-		port:777
-	}
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    compress: true,
+    port: 777,
+  },
 };

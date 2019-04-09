@@ -1,0 +1,40 @@
+$main-col: #42369a;
+$btn-col: #7971ac;
+$bg-col: #f1effc;
+
+.btn:hover {
+  cursor: pointer;
+}
+body {
+  background-color: $bg-col;
+  header {
+    background-image: url('./img/bg/header.svg');
+    background-size: cover;
+    color: white;
+    width: 100%;
+		padding: 4rem 0;
+    .logo {
+      display: inline-block;
+      width: 50%;
+      .logo-img {
+        margin: auto;
+        width: 15rem;
+      }
+    }
+    .header-btns {
+      display: inline-block;
+			text-align: right;
+      width: 50%;
+      .icons-row {
+				display: inline-block;
+        > div {
+          margin: auto 1rem;
+          display: inline-block;
+          svg {
+            height: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,10 +2,13 @@ const HtmlWebPackPlugin = require('Html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
-  entry: './src/index.js',
+	entry: {
+		app: './src/index.js',
+		svgAnimation: './src/svgAnimation.js'
+	},
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'main.js',
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -32,7 +35,9 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-          },
+					},{
+						loader: 'resolve-url-loader',
+					},
           {
             loader: 'sass-loader',
           },
@@ -44,7 +49,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[name].[ext]',
+              name: '[path][name].[ext]',
             },
           },
         ],
@@ -57,7 +62,7 @@ module.exports = {
       filename: 'index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'style/[name].css',
+      filename: '[path][name].css',
     }),
   ],
   devServer: {

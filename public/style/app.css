@@ -1,0 +1,28 @@
+.btn:hover {
+  cursor: pointer; }
+
+body {
+  background-color: #f1effc; }
+  body header {
+    background-image: url(src/img/bg/header.svg);
+    background-size: cover;
+    color: white;
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body header .logo {
+      text-align: center;
+      flex: 5; }
+      body header .logo .logo-img {
+        margin: auto;
+        width: 15rem; }
+  body .header-btns {
+    display: flex;
+    flex: 1; }
+    body .header-btns > div {
+      margin: auto 1rem; }
+      body .header-btns > div svg {
+        height: 3rem; }
+

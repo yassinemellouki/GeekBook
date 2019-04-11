@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack --mode development",
     "build": "webpack --mode production",
-    "serv": "webpack-dev-server --open chrome",
+    "serv": "webpack-dev-server",
     "liveserv": "nodemon --watch ./src/components --watch ./src/index.html --watch ./src/index.js --watch ./webpack-config.js --watch ./src/App.js --exec sudo npm run serv"
   },
   "author": "Yassine Mellouki",

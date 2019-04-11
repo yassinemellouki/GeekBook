@@ -1,0 +1,36 @@
+.btn:hover {
+  cursor: pointer; }
+
+body {
+  background-color: #f1effc; }
+  body header {
+    background-image: url(src/img/bg/header.svg);
+    background-size: cover;
+    background-position: 50% 100%;
+    color: white;
+    width: 100%;
+    padding: 4rem 0 6rem; }
+    body header .logo {
+      display: inline-block;
+      width: 57%; }
+      body header .logo .logo-img {
+        margin-left: auto;
+        width: 12rem; }
+    body header .header-btns {
+      display: inline-block;
+      text-align: right;
+      float: right;
+      width: 43%; }
+      body header .header-btns:after {
+        content: "";
+        display: block;
+        clear: both; }
+      body header .header-btns .icons-row {
+        margin-right: 6rem;
+        display: inline-block; }
+        body header .header-btns .icons-row > div {
+          margin: auto 1rem;
+          display: inline-block; }
+          body header .header-btns .icons-row > div svg {
+            height: 3rem; }
+

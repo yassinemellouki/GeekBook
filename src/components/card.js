@@ -2,15 +2,19 @@ import React, {Component} from 'react';
 import Cover from './book/cover';
 import Details from './book/details';
 import Btn from './book/btns';
+import Closebtn from './book/close_btn';
 
 class Card extends Component {
   render() {
     return (
-      <div className="book-card">
-				<Cover />
-        <div className="card-content">
-					<Details/>          
-					<Btn/>
+      <div className="card-section">
+        <Closebtn />
+        <div className="book-card">
+          <Cover />
+          <div className="card-content">
+            <Details />
+            <Btn />
+          </div>
         </div>
       </div>
     );

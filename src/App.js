@@ -9,6 +9,9 @@ class App extends Component {
         <Header />
         <div className="cards-body">
           <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
       </React.Fragment>
     );

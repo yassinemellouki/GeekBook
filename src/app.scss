@@ -230,4 +230,58 @@ body {
       }
     }
   }
+  footer {
+    margin-top: 4rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    color: white;
+    background-image: url(./img/bg/footer.svg);
+    background-size: cover;
+		background-position: 50% 100%;
+    .container {
+      width: 760px;
+      margin: auto;
+      font: {
+        family: sans-serif;
+      }
+      .form-group {
+        margin: 1rem 0 0;
+        label {
+          display: block;
+          padding: 0.5rem 0;
+					letter-spacing: .15rem;
+					margin: .5rem .3rem; 
+          font: {
+            size: 1.2rem;
+          }
+        }
+        width: 50%;
+        display: inline-block;
+        &.btn-form {
+          input {
+            background: none !important;
+            color: white;
+            border: 1px solid white;
+						transition: background-color .2s linear;
+						cursor: pointer;
+            &:hover {
+              background-color: green !important;
+            }
+          }
+        }
+        input {
+          &:focus {
+            outline: none;
+          }
+          padding: 0.6rem 0.6rem;
+          font: {
+            size: 1rem;
+          }
+          border-radius: 0.9rem;
+          border: none;
+          width: 90%;
+        }
+      }
+    }
+  }
 }

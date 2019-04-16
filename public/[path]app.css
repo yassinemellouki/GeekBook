@@ -1,6 +1,9 @@
 .btn:hover {
   cursor: pointer; }
 
+.pressed_key {
+  fill: white !important; }
+
 body {
   background-color: #f1effc; }
   body header {
@@ -9,20 +12,21 @@ body {
     background-position: 50% 100%;
     color: white;
     width: 100%;
-    padding: 4rem 0 6rem; }
+    padding: 2rem 0; }
     body header .logo {
       display: inline-block;
-      width: 57%; }
+      width: 60%; }
       body header .logo .logo-img {
         margin-left: auto;
-        width: 12rem; }
+        width: 18rem; }
     body header .header-btns {
       display: inline-block;
       text-align: right;
       float: right;
-      width: 43%; }
+      width: 40%;
+      margin-top: 4rem; }
       body header .header-btns:after {
-        content: "";
+        content: '';
         display: block;
         clear: both; }
       body header .header-btns .icons-row {
@@ -33,4 +37,178 @@ body {
           display: inline-block; }
           body header .header-btns .icons-row > div svg {
             height: 3rem; }
+  body .cards-body .card-section {
+    position: relative;
+    width: 760px;
+    display: block;
+    margin: 3rem auto; }
+    body .cards-body .card-section:hover .close-btn {
+      animation: close-btn 0.3s 0.2s linear forwards; }
+
+@keyframes close-btn {
+  0% {
+    z-index: -1; }
+  50% {
+    z-index: 1;
+    right: -3.3rem;
+    top: -1.7rem; }
+  100% {
+    z-index: 2;
+    right: -1.6rem;
+    top: -0.7rem; } }
+    body .cards-body .card-section .close-btn {
+      position: absolute;
+      right: -0.2rem;
+      top: -0.2rem;
+      overflow: hidden;
+      border-radius: 2rem;
+      z-index: -1; }
+      body .cards-body .card-section .close-btn button {
+        padding: 0.4rem 0.8rem;
+        background-color: red;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 1.5rem; }
+    @media only screen and (max-width: 767px) {
+      body .cards-body .card-section {
+        width: 100% !important; } }
+    body .cards-body .card-section .book-card {
+      background-color: #fff;
+      height: 15rem;
+      border-radius: 2rem;
+      overflow: hidden;
+      margin: 2rem 0;
+      transition: all 0.3s linear;
+      box-shadow: #2d2d2d85 0.1rem 0.3rem 0.4rem; }
+      body .cards-body .card-section .book-card:hover {
+        box-shadow: #2d2d2d85 0.2rem 0.5rem 0.8rem;
+        transform: scale(1.05); }
+      body .cards-body .card-section .book-card .card-img {
+        float: left;
+        width: 30%;
+        height: 100%;
+        display: inline-block; }
+        body .cards-body .card-section .book-card .card-img img {
+          margin: auto;
+          width: 100%;
+          height: 100%; }
+      body .cards-body .card-section .book-card .card-content {
+        width: 70%;
+        height: 100%;
+        display: inline-block;
+        float: right; }
+        body .cards-body .card-section .book-card .card-content .book-info {
+          box-sizing: border-box;
+          width: 80%;
+          height: 100%;
+          display: inline-block;
+          padding: 1rem 1rem;
+          color: #434343;
+          font-family: sans-serif; }
+          body .cards-body .card-section .book-card .card-content .book-info .book-title h2 {
+            text-transform: Capitalize;
+            font-size: 1.4rem; }
+          body .cards-body .card-section .book-card .card-content .book-info .book-author {
+            color: #868686;
+            font-size: 0.8rem; }
+          body .cards-body .card-section .book-card .card-content .book-info .price-btn {
+            margin-top: 2rem;
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background-color: #7971ac;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 300;
+            border-radius: 0.9rem; }
+        body .cards-body .card-section .book-card .card-content .card-btns {
+          width: 20%;
+          height: 100%;
+          display: inline-block;
+          float: right; }
+          body .cards-body .card-section .book-card .card-content .card-btns .icons-row {
+            height: 100%; }
+            body .cards-body .card-section .book-card .card-content .card-btns .icons-row .favorite-btn,
+            body .cards-body .card-section .book-card .card-content .card-btns .icons-row .bags-btn {
+              transition: background-color 0.2s linear; }
+              body .cards-body .card-section .book-card .card-content .card-btns .icons-row .favorite-btn:hover,
+              body .cards-body .card-section .book-card .card-content .card-btns .icons-row .bags-btn:hover {
+                background-color: #7971ac; }
+                body .cards-body .card-section .book-card .card-content .card-btns .icons-row .favorite-btn:hover svg,
+                body .cards-body .card-section .book-card .card-content .card-btns .icons-row .bags-btn:hover svg {
+                  animation: btn_anim 0.4s linear forwards; }
+
+@keyframes btn_anim {
+  0% {
+    transform: scale(1) rotate(0); }
+  60% {
+    transform: scale(0.5) rotate(360deg); }
+  100% {
+    transform: scale(1.3) rotate(0); } }
+            body .cards-body .card-section .book-card .card-content .card-btns .icons-row .favorite-btn {
+              background-color: #42369a;
+              cursor: pointer;
+              height: 50%; }
+              body .cards-body .card-section .book-card .card-content .card-btns .icons-row .favorite-btn .fav-img > div {
+                padding-top: 2rem; }
+                body .cards-body .card-section .book-card .card-content .card-btns .icons-row .favorite-btn .fav-img > div svg {
+                  width: 2.5rem;
+                  display: block;
+                  position: relative;
+                  margin: auto; }
+              body .cards-body .card-section .book-card .card-content .card-btns .icons-row .favorite-btn .fav-img:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 0.15rem;
+                background-color: #fff; }
+            body .cards-body .card-section .book-card .card-content .card-btns .icons-row .bags-btn {
+              background-color: #42369a;
+              height: 50%;
+              cursor: pointer; }
+              body .cards-body .card-section .book-card .card-content .card-btns .icons-row .bags-btn .bag-img > div {
+                padding-top: 2rem; }
+                body .cards-body .card-section .book-card .card-content .card-btns .icons-row .bags-btn .bag-img > div svg {
+                  width: 2.5rem;
+                  display: block;
+                  position: relative;
+                  margin: auto; }
+  body footer {
+    margin-top: 4rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    color: white;
+    background-image: url(src/img/bg/footer.svg);
+    background-size: cover;
+    background-position: 50% 100%; }
+    body footer .container {
+      width: 760px;
+      margin: auto;
+      font-family: sans-serif; }
+      body footer .container .form-group {
+        margin: 1rem 0 0;
+        width: 50%;
+        display: inline-block; }
+        body footer .container .form-group label {
+          display: block;
+          padding: 0.5rem 0;
+          letter-spacing: .15rem;
+          margin: .5rem .3rem;
+          font-size: 1.2rem; }
+        body footer .container .form-group.btn-form input {
+          background: none !important;
+          color: white;
+          border: 1px solid white;
+          transition: background-color .2s linear;
+          cursor: pointer; }
+          body footer .container .form-group.btn-form input:hover {
+            background-color: green !important; }
+        body footer .container .form-group input {
+          padding: 0.6rem 0.6rem;
+          font-size: 1rem;
+          border-radius: 0.9rem;
+          border: none;
+          width: 90%; }
+          body footer .container .form-group input:focus {
+            outline: none; }
 

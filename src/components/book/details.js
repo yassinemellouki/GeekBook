@@ -6,14 +6,14 @@ class Details extends Component {
     return (
       <div className="book-info">
         <div className="book-title">
-          <h2>this is the book title</h2>
+          <h2>{this.props.title}</h2>
         </div>
         <div className="book-author">
           <p>
-            Written By <span>Yassine Mellouki</span>
+            Written By <span>{this.props.author}</span>
           </p>
         </div>
-        <Price />
+        <Price price={this.props.price} />
       </div>
     );
   }

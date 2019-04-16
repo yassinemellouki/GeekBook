@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
 	entry: {
 		app: './src/index.js',
-		svgAnimation: './src/svgAnimation.js'
 	},
   output: {
     path: path.resolve(__dirname, 'public'),

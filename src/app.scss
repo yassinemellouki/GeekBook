@@ -7,6 +7,9 @@ $bg-col: #f1effc;
 .btn:hover {
   cursor: pointer;
 }
+.pressed_key{
+	fill: white !important;
+}
 body {
   background-color: $bg-col;
   header {
@@ -15,20 +18,21 @@ body {
     background-position: 50% 100%;
     color: white;
     width: 100%;
-    padding: 4rem 0 6rem;
+    padding: 2rem 0;
     .logo {
       display: inline-block;
-      width: 57%;
+      width: 60%;
       .logo-img {
         margin-left: auto;
-        width: 12rem;
+        width: 18rem;
       }
     }
     .header-btns {
       display: inline-block;
       text-align: right;
       float: right;
-      width: 43%;
+      width: 40%;
+			margin-top: 4rem;
       &:after {
         content: '';
         display: block;
@@ -135,6 +139,9 @@ body {
             .book-title {
               h2 {
                 text-transform: Capitalize;
+								font:{
+									size: 1.4rem;
+								}
               }
             }
             .book-author {

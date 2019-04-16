@@ -4,7 +4,7 @@ class Price extends Component {
   render() {
     return (
       <div className="price-btn">
-        <span>46.61$</span>
+        <span>{this.props.price} $</span>
       </div>
     );
   }

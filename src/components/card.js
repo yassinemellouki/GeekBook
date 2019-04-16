@@ -10,9 +10,9 @@ class Card extends Component {
       <div className="card-section">
         <Closebtn />
         <div className="book-card">
-          <Cover />
+          <Cover img={this.props.bookInfos.cover} />
           <div className="card-content">
-            <Details />
+            <Details title={this.props.bookInfos.title}  author={this.props.bookInfos.author} price={this.props.bookInfos.price}/>
             <Btn />
           </div>
         </div>

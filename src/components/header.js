@@ -10,7 +10,19 @@ class Header extends Component {
       <header>
         <div className="logo">
           <div className="logo-img">
-            <ReactSVG src={Logo} />
+			<ReactSVG src={Logo} onInjected={(error, svg) => {
+				// Keyboad Animation
+	var pres_keys = document.querySelectorAll('#pressed_keys path');
+	setInterval(function(){
+		var randomkey = Math.floor(Math.random()*22),
+					i;
+		for(i=0; i<pres_keys.length; i++){
+			pres_keys[i].classList.remove("pressed_key")
+		}
+		pres_keys[randomkey].classList.add("pressed_key")
+	},200)
+
+			}} />
           </div>
         </div>
         <div className="header-btns">

@@ -9,6 +9,13 @@ class Card extends Component {
 		notif_bags : [],
 		notif_fav : []
 	}
+  addToFavorite = (data) => {
+		let notif = this.state.notif_fav;
+		console.log(notif)
+		notif.push(data)
+		this.setState({notif_fav: notif})
+		console.log(this.state.notif_fav)
+    };
   render() {
 		let isaFav = (valu) => {
 			console.log(valu)
@@ -20,7 +27,7 @@ class Card extends Component {
           <Cover img={this.props.bookInfos.cover} />
           <div className="card-content">
             <Details title={this.props.bookInfos.title}  author={this.props.bookInfos.author} price={this.props.bookInfos.price}/>
-            <Btn isaFav={isaFav} bookDetails={this.props.bookInfos} />
+            <Btn addToFavorite={this.addToFavorite} bookDetails={this.props.bookInfos} />
           </div>
         </div>
       </div>

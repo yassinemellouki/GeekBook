@@ -4,22 +4,21 @@ import Star from '../../img/star.svg';
 import ReactSVG from 'react-svg';
 
 class Btn extends Component {
-  state = {
-    to_bag: [],
-    to_fav: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      to_bag: [],
+      to_fav: false,
+    };
+  }
 
   render() {
-    let addToFavorite = () => {
-      this.setState({to_fav: !this.state.to_fav});
-    };
-
     let addToBag = () => {
       this.setState({to_bag: [...this.state.to_bag, this.props.bookDetails]});
       console.log(this.state.to_bag);
     };
 
-		let favToggle = function(){
+    let favToggle = function() {
       let fav_icon = document.getElementById(
           'fav_' + this.props.bookDetails.id,
         ),
@@ -30,12 +29,8 @@ class Btn extends Component {
       } else {
         fav_bg.style.fill = 'none';
       }
-		}
+    };
 
-
-		let isaFav = (data) => {
-			console.log(data)
-		}
     return (
       <div className="card-btns">
         <div className="icons-row">
@@ -47,13 +42,13 @@ class Btn extends Component {
               <ReactSVG src={Bag} />
             </div>
           </div>
-          <div onClick={this.props.isaFav}
+          <div
+            onClick={() => this.props.addToFavorite(this.props.bookDetails)}
             className="favorite-btn"
             id={'fav_' + this.props.bookDetails.id}
-            //onClick={addToFavorite}
-			>
+            >
             <div className="btn fav-img">
-			<ReactSVG src={Star} onInjected = {favToggle.bind(this)}/>
+              <ReactSVG src={Star} onInjected={favToggle.bind(this)} />
             </div>
           </div>
         </div>

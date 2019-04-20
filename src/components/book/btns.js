@@ -24,7 +24,7 @@ class Btn extends Component {
         ),
         fav_bg = fav_icon.querySelector('svg .bg');
 
-      if (this.state.to_fav) {
+      if (this.props.isaFav) {
         fav_bg.style.fill = 'red';
       } else {
         fav_bg.style.fill = 'none';

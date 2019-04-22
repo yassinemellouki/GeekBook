@@ -1,13 +1,28 @@
 import React, {Component} from 'react';
+const uuidv4 = require('uuid/v4');
 
 class Footer extends Component {
+	state = {
+		newBook: [],
+	}
+
+
+	onSubmit = (e) =>{
+		e.preventDefault()
+			const target = e.target;
+			let id = uuidv4()
+			let title = document.getElementById("book-title").value;
+			let author = document.getElementById("book-author").value;
+			let price = document.getElementById("book-price").value;
+		this.setState({newBook: {id, title, author, cover: "https://placehold.it/500", price}})
+		}
   render() {
     return (
       <footer>
         <div className="container">
           <div className="add-form">
             <h1>Add a New Book:</h1>
-            <form autoComplete="off">
+            <form onSubmit={this.onSubmit} autoComplete="off">
               <div className="form-group">
                 <label htmlFor="book-title">Title:</label>
                 <input type="text" placeholder="Turbo Pascal 7: The Complete Reference" required name="book-title" id="book-title" />

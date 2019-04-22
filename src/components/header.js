@@ -5,24 +5,36 @@ import Star from '../img/star.svg';
 import ReactSVG from 'react-svg';
 
 class Header extends Component {
+	state = {
+		favorite : []
+	}
+
+	componentWillMount(){
+		this.setState({favorite: JSON.parse(window.localStorage.getItem("favorite"))})
+	}
+	componentDidMount(){
+    window.localStorage.setItem('favorite', JSON.stringify(this.state.favorite));
+	}
   render() {
     return (
       <header>
         <div className="logo">
           <div className="logo-img">
-			<ReactSVG src={Logo} onInjected={(error, svg) => {
-				// Keyboad Animation
-	var pres_keys = document.querySelectorAll('#pressed_keys path');
-	setInterval(function(){
-		var randomkey = Math.floor(Math.random()*22),
-					i;
-		for(i=0; i<pres_keys.length; i++){
-			pres_keys[i].classList.remove("pressed_key")
-		}
-		pres_keys[randomkey].classList.add("pressed_key")
-	},200)
-
-			}} />
+            <ReactSVG
+              src={Logo}
+              onInjected={(error, svg) => {
+                // Keyboad Animation
+                var pres_keys = document.querySelectorAll('#pressed_keys path');
+               setInterval(function() {
+                  var randomkey = Math.floor(Math.random() * 22),
+                    i;
+                  for (i = 0; i < pres_keys.length; i++) {
+                    pres_keys[i].classList.remove('pressed_key');
+                  }
+                  pres_keys[randomkey].classList.add('pressed_key');
+                }, 200);
+              }}
+            />
           </div>
         </div>
         <div className="header-btns">

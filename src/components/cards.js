@@ -3,6 +3,7 @@ import Card from './card';
 
 class Cards extends Component {
   state = {
+		/*
     books: [
       {
         id: '1',
@@ -38,9 +39,16 @@ class Cards extends Component {
         price: '28,21',
       },
     ],
+		*/
     favorite: [],
     bag: [],
   };
+	componentWillMount(){
+		window.localStorage.getItem('books') && this.setState({books: JSON.parse(window.localStorage.getItem('books'))})
+	}
+  componentDidMount() {
+    window.localStorage.setItem('books', JSON.stringify(this.state.books));
+  }
 
   isaFav = data => {
     if (typeof data === 'object') {
@@ -51,11 +59,6 @@ class Cards extends Component {
       });
     }
   };
-	componentDidUpdate(prevState, prevProps){
-
-
-
-	}
 
   render() {
     return (

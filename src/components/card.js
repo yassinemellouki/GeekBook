@@ -5,22 +5,35 @@ import Btn from './book/btns';
 import Closebtn from './book/close_btn';
 
 class Card extends Component {
-	state = {
-		notif_bags : [],
-		notif_fav : false
-	}
-  addToFavorite = (data) => {
-		this.setState({notif_fav: !this.state.notif_fav})
-    };
-		componentDidUpdate(prevProps, prevState){
-			if(prevState.notif_fav != this.state.notif_fav){
-			if(this.state.notif_fav){
-				this.props.isaFav(this.props.bookInfos)
-			}else{
-				this.props.isaFav(this.props.bookInfos.id, false)
-			}
-			}
-		}
+  state = {
+    notif_bags: [],
+    notif_fav: false,
+  };
+  addToFavorite = data => {
+    this.setState({notif_fav: !this.state.notif_fav});
+  };
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.notif_fav != this.state.notif_fav) {
+      if (this.state.notif_fav) {
+        this.props.isaFav(this.props.bookInfos);
+      } else {
+        this.props.isaFav(this.props.bookInfos.id, false);
+      }
+    }
+  }
+
+  componentWillMount(prevProps, prevState) {
+    //if (prevState.notif_fav == this.state.notif_fav) {
+      let localfav = JSON.parse(window.localStorage.getItem('favorite'));
+		console.log(this.props.bookInfos.id)
+
+      /*localfav.filter(
+        book =>
+          book.id === this.props.bookInfos.id &&
+          this.setState({notif_fav: true}),
+      );
+    }*/
+  }
   render() {
     return (
       <div className="card-section">
@@ -28,8 +41,16 @@ class Card extends Component {
         <div className="book-card">
           <Cover img={this.props.bookInfos.cover} />
           <div className="card-content">
-            <Details title={this.props.bookInfos.title}  author={this.props.bookInfos.author} price={this.props.bookInfos.price}/>
-            <Btn isaFav={this.state.notif_fav} addToFavorite={this.addToFavorite} bookDetails={this.props.bookInfos} />
+            <Details
+              title={this.props.bookInfos.title}
+              author={this.props.bookInfos.author}
+              price={this.props.bookInfos.price}
+            />
+            <Btn
+              isaFav={this.state.notif_fav}
+              addToFavorite={this.addToFavorite}
+              bookDetails={this.props.bookInfos}
+            />
           </div>
         </div>
       </div>

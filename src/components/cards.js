@@ -3,8 +3,10 @@ import Card from './card';
 
 class Cards extends Component {
   state = {
-		/*
-    books: [
+    books: [],
+    favorite: [],
+    bag: [],
+		defaultBooks: [
       {
         id: '1',
         title: 'HTTP: The Definitive Guide',
@@ -38,19 +40,31 @@ class Cards extends Component {
         cover: 'nodejs',
         price: '28,21',
       },
-    ],
-		*/
-    favorite: [],
-    bag: [],
+		]
   };
-	componentWillMount(){
-		window.localStorage.getItem('books') && this.setState({books: JSON.parse(window.localStorage.getItem('books'))})
-	}
+  componentWillMount() {
+		if (window.localStorage.getItem('books') !== null){
+      this.setState({books: JSON.parse(window.localStorage.getItem('books'))});
+		}else{
+      this.setState({books: this.state.defaultBooks });
+		}
+
+    let local_data = JSON.parse(window.localStorage.getItem('favorite'));
+    this.setState({favorite: local_data});
+  }
   componentDidMount() {
     window.localStorage.setItem('books', JSON.stringify(this.state.books));
   }
 
   isaFav = data => {
+    /*let prev_localS = window.localStorage.getItem('favorite');
+		prev_localS = JSON.stringify(prev_localS)
+		let new_localS = JSON.stringify(data);
+		console.log(prev_localS)
+		console.log(new_localS)
+		*/
+
+    /*
     if (typeof data === 'object') {
       this.setState({favorite: [...this.state.favorite, data]});
     } else {
@@ -58,13 +72,28 @@ class Cards extends Component {
         favorite: this.state.favorite.filter(fav => fav.id != data[0]),
       });
     }
+		*/
+
+    if (typeof data == 'object') {
+      this.setState({favorite: [...this.state.favorite, data]});
+    } else {
+      let local_data = JSON.parse(window.localStorage.getItem('favorite'));
+      this.setState({
+        favorite: this.state.favorite.filter(fav => fav.id != data[0]),
+      });
+    }
   };
 
   render() {
+		console.log(this.state.favorite)
     return (
       <div className="cards" tofav={this.props.toFav(this.state.favorite)}>
         {this.state.books.map(book => (
-          <Card isaFav={this.isaFav} bookInfos={book} />
+          <Card
+            isaFav={this.isaFav}
+            bookInfos={book}
+            favSigned={this.props.favSigned.filter(fav => fav.id == book.id)}
+          />
         ))}
       </div>
     );

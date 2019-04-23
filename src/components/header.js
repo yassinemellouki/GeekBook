@@ -5,16 +5,30 @@ import Star from '../img/star.svg';
 import ReactSVG from 'react-svg';
 
 class Header extends Component {
-	state = {
-		favorite : []
-	}
+  state = {
+    favorite: [this.props.toFav],
+		favs_length: 0,
+  };
 
-	componentWillMount(){
-		this.setState({favorite: JSON.parse(window.localStorage.getItem("favorite"))})
-	}
-	componentDidMount(){
-    window.localStorage.setItem('favorite', JSON.stringify(this.state.favorite));
-	}
+
+	/*
+  componentWillMount() {
+    this.setState({
+      favorite: JSON.parse(window.localStorage.getItem('favorite')),
+			favs_length: JSON.parse(window.localStorage.getItem('favorite')).length
+    });
+  }
+
+  componentDidMount() {
+    window.localStorage.setItem(
+      'favorite',
+      JSON.stringify(this.state.favorite),
+    );
+		console.log(this.state.favorite)
+		console.log(this.state.favs_length)
+  }
+	*/
+
   render() {
     return (
       <header>
@@ -25,7 +39,7 @@ class Header extends Component {
               onInjected={(error, svg) => {
                 // Keyboad Animation
                 var pres_keys = document.querySelectorAll('#pressed_keys path');
-               setInterval(function() {
+                setInterval(function() {
                   var randomkey = Math.floor(Math.random() * 22),
                     i;
                   for (i = 0; i < pres_keys.length; i++) {

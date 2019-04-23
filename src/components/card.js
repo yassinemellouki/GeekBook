@@ -12,6 +12,14 @@ class Card extends Component {
   addToFavorite = data => {
     this.setState({notif_fav: !this.state.notif_fav});
   };
+
+  componentWillMount() {
+		if(this.props.favSigned.length > 0){
+			if(this.props.favSigned[0].id === this.props.bookInfos.id){
+				this.setState({notif_fav: true})
+			}
+		}
+  }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.notif_fav != this.state.notif_fav) {
       if (this.state.notif_fav) {
@@ -22,18 +30,12 @@ class Card extends Component {
     }
   }
 
-  componentWillMount(prevProps, prevState) {
-    //if (prevState.notif_fav == this.state.notif_fav) {
-      let localfav = JSON.parse(window.localStorage.getItem('favorite'));
-		console.log(this.props.bookInfos.id)
-
-      /*localfav.filter(
+  /*localfav.filter(
         book =>
           book.id === this.props.bookInfos.id &&
           this.setState({notif_fav: true}),
       );
     }*/
-  }
   render() {
     return (
       <div className="card-section">

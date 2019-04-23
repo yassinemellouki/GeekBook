@@ -11,11 +11,40 @@ class Btn extends Component {
       to_fav: false,
     };
   }
+  componentDidUpdate() {
+    if (localStorage.getItem('bags') === null) {
+      let addData = JSON.stringify(this.state.to_bag);
+      window.localStorage.setItem('bags', addData);
+      console.log(localStorage.getItem('bags'));
+    } else {
+      let prevData = [window.localStorage.getItem('bags')];
+      let addData = JSON.stringify(this.state.to_bag),
+        newData = [...prevData, addData];
+      console.log(prevData);
+      console.log(addData);
+      console.log(newData);
+      //window.localStorage.setItem('bags', newData)
+    }
+  }
 
   render() {
     let addToBag = () => {
-      this.setState({to_bag: [...this.state.to_bag, this.props.bookDetails]});
-      console.log(this.state.to_bag);
+      this.setState({to_bag: this.props.bookDetails});
+      if (this.state.to_bag.length > 0) {
+      }
+    };
+
+    let toggleBag = () => {
+      if (this.state.to_bag.length > 0) {
+        let bag_icon = document.getElementById(
+          'bags_' + this.props.bookDetails.id,
+        );
+        let bag_bg = bag_icon.getElementsByTagName('ellipse')[0],
+          text = bag_icon.getElementsByTagName('text')[0];
+
+        bag_bg.style.fill = 'red';
+        text.innerHTML = this.state.to_bag.length;
+      }
     };
 
     let favToggle = function() {
@@ -39,14 +68,13 @@ class Btn extends Component {
             id={'bags_' + this.props.bookDetails.id}
             onClick={addToBag}>
             <div className="btn bag-img">
-              <ReactSVG src={Bag} />
+              <ReactSVG src={Bag} onInjected={toggleBag} />
             </div>
           </div>
           <div
             onClick={() => this.props.addToFavorite(this.props.bookDetails)}
             className="favorite-btn"
-            id={'fav_' + this.props.bookDetails.id}
-            >
+            id={'fav_' + this.props.bookDetails.id}>
             <div className="btn fav-img">
               <ReactSVG src={Star} onInjected={favToggle.bind(this)} />
             </div>

@@ -7,35 +7,35 @@ class Btn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      to_bag: [],
+      to_bag: 0,
       to_fav: false,
     };
   }
-  componentDidUpdate() {
-    if (localStorage.getItem('bags') === null) {
+  componentDidUpdate(props, prevState) {
+    let id = props.bookDetails.id;
+    if (localStorage.getItem('bag_' + id) === null) {
       let addData = JSON.stringify(this.state.to_bag);
-      window.localStorage.setItem('bags', addData);
-      console.log(localStorage.getItem('bags'));
+      window.localStorage.setItem('bag_' + id, addData);
     } else {
-      let prevData = [window.localStorage.getItem('bags')];
-      let addData = JSON.stringify(this.state.to_bag),
-        newData = [...prevData, addData];
-      console.log(prevData);
-      console.log(addData);
-      console.log(newData);
-      //window.localStorage.setItem('bags', newData)
+      let prevData = [window.localStorage.getItem('bag_' + id)];
+      let addData = JSON.stringify(this.state.to_bag);
+      window.localStorage.setItem('bag_' + id, addData);
     }
+  }
+
+  componentWillMount(props, prevState) {
+    let id = this.props.bookDetails.id;
+      let prevData = window.localStorage.getItem('bag_' + id);
+			this.setState({to_bag: JSON.parse(prevData)})
   }
 
   render() {
     let addToBag = () => {
-      this.setState({to_bag: this.props.bookDetails});
-      if (this.state.to_bag.length > 0) {
-      }
+      this.setState({to_bag: this.state.to_bag + 1});
     };
 
     let toggleBag = () => {
-      if (this.state.to_bag.length > 0) {
+      if (this.state.to_bag > 0) {
         let bag_icon = document.getElementById(
           'bags_' + this.props.bookDetails.id,
         );
@@ -43,7 +43,10 @@ class Btn extends Component {
           text = bag_icon.getElementsByTagName('text')[0];
 
         bag_bg.style.fill = 'red';
-        text.innerHTML = this.state.to_bag.length;
+        text.innerHTML = this.state.to_bag;
+        if (this.state.to_bag > 9) {
+          text.setAttribute('transform', 'matrix(1.19 0 0 1 80 366.5)');
+        }
       }
     };
 

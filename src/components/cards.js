@@ -6,7 +6,7 @@ class Cards extends Component {
     books: [],
     favorite: [],
     bag: [],
-		defaultBooks: [
+    defaultBooks: [
       {
         id: '1',
         title: 'HTTP: The Definitive Guide',
@@ -40,14 +40,24 @@ class Cards extends Component {
         cover: 'nodejs',
         price: '28,21',
       },
-		]
+    ],
   };
   componentWillMount() {
-		if (window.localStorage.getItem('books') !== null){
+    if (
+      window.localStorage.getItem('books') !== null &&
+      window.localStorage.getItem('new_book').length > 10 ||
+      window.localStorage.getItem('new_book') == null
+    ) {
+			let new_book = JSON.parse(localStorage.getItem('new_book'))
+			console.log(new_book)
+      this.setState({books: [...JSON.parse(window.localStorage.getItem('books')), new_book]});
+			window.localStorage.setItem("new_book", "[]")
+			location.reload()
+    } else if (window.localStorage.getItem('books') !== null) {
       this.setState({books: JSON.parse(window.localStorage.getItem('books'))});
-		}else{
-      this.setState({books: this.state.defaultBooks });
-		}
+    } else {
+      this.setState({books: this.state.defaultBooks});
+    }
 
     let local_data = JSON.parse(window.localStorage.getItem('favorite'));
     this.setState({favorite: local_data});
@@ -85,11 +95,11 @@ class Cards extends Component {
   };
 
   render() {
-		console.log(this.state.favorite)
     return (
       <div className="cards" tofav={this.props.toFav(this.state.favorite)}>
         {this.state.books.map(book => (
           <Card
+            key={book.id}
             isaFav={this.isaFav}
             bookInfos={book}
             favSigned={this.props.favSigned.filter(fav => fav.id == book.id)}

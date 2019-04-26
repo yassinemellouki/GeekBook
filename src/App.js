@@ -47,6 +47,10 @@ class App extends Component {
 		*/
   };
 
+	submitedBook(){
+		console.log("submited book")
+	}
+
   render() {
     return (
       <React.Fragment>

@@ -6,6 +6,7 @@ import ReactSVG from 'react-svg';
 
 class Header extends Component {
   state = {
+		renderFav: 0,
     favorite: [this.props.toFav],
 		favs_length: 0,
   };

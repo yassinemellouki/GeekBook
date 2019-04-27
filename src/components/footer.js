@@ -24,6 +24,7 @@ class Footer extends Component {
   componentDidUpdate() {
 		window.localStorage.setItem("new_book", JSON.stringify(this.state.newBook))
     console.log(this.state.newBook);
+		location.reload()
   }
   render() {
     return (

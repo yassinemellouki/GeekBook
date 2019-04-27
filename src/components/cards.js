@@ -45,14 +45,13 @@ class Cards extends Component {
   componentWillMount() {
     if (
       window.localStorage.getItem('books') !== null &&
-      window.localStorage.getItem('new_book').length > 10 ||
-      window.localStorage.getItem('new_book') == null
+      window.localStorage.getItem('new_book') != null
     ) {
-			let new_book = JSON.parse(localStorage.getItem('new_book'))
-			console.log(new_book)
-      this.setState({books: [...JSON.parse(window.localStorage.getItem('books')), new_book]});
-			window.localStorage.setItem("new_book", "[]")
-			location.reload()
+      let new_book = JSON.parse(localStorage.getItem('new_book'));
+      this.setState({
+        books: [...JSON.parse(window.localStorage.getItem('books')), new_book],
+      });
+      window.localStorage.removeItem('new_book');
     } else if (window.localStorage.getItem('books') !== null) {
       this.setState({books: JSON.parse(window.localStorage.getItem('books'))});
     } else {
@@ -65,7 +64,6 @@ class Cards extends Component {
   componentDidMount() {
     window.localStorage.setItem('books', JSON.stringify(this.state.books));
   }
-
   isaFav = data => {
     /*let prev_localS = window.localStorage.getItem('favorite');
 		prev_localS = JSON.stringify(prev_localS)
@@ -85,11 +83,12 @@ class Cards extends Component {
 		*/
 
     if (typeof data == 'object') {
+			console.log(data)
       this.setState({favorite: [...this.state.favorite, data]});
     } else {
       let local_data = JSON.parse(window.localStorage.getItem('favorite'));
       this.setState({
-        favorite: this.state.favorite.filter(fav => fav.id != data[0]),
+        favorite: this.state.favorite.filter(fav => fav.id != data),
       });
     }
   };

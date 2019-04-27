@@ -52,7 +52,7 @@ class Header extends Component {
             />
           </div>
         </div>
-        <div className="header-btns">
+        <div style={{"display":"none"}} className="header-btns">
           <div className="icons-row">
             <div className="favorite-btn">
               <div className="btn fav-img">

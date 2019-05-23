@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Header from './components/header';
 import Cards from './components/cards';
 import Footer from './components/footer';
+import {connect} from 'react-redux';
+import * as bookActions from "./redux/actions/bookActions";
 class App extends Component {
   state = {
     to_favorite: [],
@@ -51,6 +53,8 @@ class App extends Component {
 		console.log("submited book")
 	}
 
+
+
   render() {
     return (
       <React.Fragment>
@@ -64,4 +68,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state, ownProps){
+	return {
+		books: state
+	}
+}
+
+export default connect(mapStateToProps)(App);

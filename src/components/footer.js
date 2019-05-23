@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import * as bookActions from '../redux/actions/bookActions';
 const uuidv4 = require('uuid/v4');
 
 class Footer extends Component {
@@ -8,6 +10,7 @@ class Footer extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+		this.props.dispatch(bookActions.addBook("hello coder"));
     const target = e.target;
     let id = uuidv4();
     let title = document.getElementById('book-title').value;
@@ -24,7 +27,7 @@ class Footer extends Component {
   componentDidUpdate() {
 		window.localStorage.setItem("new_book", JSON.stringify(this.state.newBook))
     console.log(this.state.newBook);
-		location.reload()
+		//location.reload()
   }
   render() {
     return (
@@ -79,4 +82,9 @@ class Footer extends Component {
     );
   }
 }
-export default Footer;
+function mapStateToProps(state){
+	return {
+		book: state
+	}
+}
+export default connect(mapStateToProps)(Footer);

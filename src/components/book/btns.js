@@ -18,6 +18,8 @@ class Btn extends Component {
 
 	componentDidUpdate(){
 			console.log(this.props.state.books.bag)
+
+		//toggle favorite button
       let fav_icon = document.getElementById(
           'fav_' + this.props.bookId,
         ),
@@ -27,6 +29,23 @@ class Btn extends Component {
       } else {
        fav_bg.style.fill = 'none';
       }
+
+		//toogle bags butoon
+        let bag_icon = document.getElementById(
+          'bag_' + this.props.bookId,
+        );
+        let bag_bg = bag_icon.getElementsByTagName('ellipse')[0],
+          text = bag_icon.getElementsByTagName('text')[0];
+			let bookId = this.props.bookId;
+		this.props.state.books.bag.forEach(function(bag){
+			if(bag.bagId === bookId){
+        bag_bg.style.fill = 'red';
+        text.innerHTML = bag.count;
+				if(bag.count > 9){
+					text.setAttribute('transform', 'matrix(1.19 0 0 1 80 366.5)');
+				}
+			}
+		})
 	}
 
     favToggle = function() {

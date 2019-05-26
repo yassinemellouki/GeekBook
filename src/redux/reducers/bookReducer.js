@@ -44,7 +44,8 @@ export default function bookReducer(state = initialState, action){
 		case "REMOVE_BOOK":
 			let newBooksList = state.books.filter(book=> book.id != action.bookId);
 			let newFavoritesList = state.favorite.filter(fav=> fav != action.bookId);
-			return Object.assign({}, state, {favorite: newFavoritesList, books: [...newBooksList]})
+			let newBagsList = state.bag.filter(bag=> bag.bagId != action.bookId);
+			return Object.assign({}, state, {bag: newBagsList, favorite: newFavoritesList, books: [...newBooksList]})
 		case "ADD_TO_FAVORITE":
 			if(state.favorite.includes(action.bookId)){
 				let newFavList = state.favorite.filter(fav => fav != action.bookId)

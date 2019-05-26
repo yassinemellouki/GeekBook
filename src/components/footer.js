@@ -10,25 +10,19 @@ class Footer extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-		this.props.dispatch(bookActions.addBook("hello coder"));
     const target = e.target;
     let id = uuidv4();
     let title = document.getElementById('book-title').value;
     let author = document.getElementById('book-author').value;
-    let price = document.getElementById('book-price').value;
-    this.setState({
-      newBook: {id, title, author, cover: 'https://placehold.it/500', price},
-    });
+    let price = document.getElementById('book-price').value,
+    newBook = {id, title, author, cover: 'https://placehold.it/500', price};
+		this.props.dispatch(bookActions.addBook(newBook));
     document.getElementById('book-title').value = '';
     document.getElementById('book-author').value = '';
     document.getElementById('book-price').value = '';
   };
 
-  componentDidUpdate() {
-		window.localStorage.setItem("new_book", JSON.stringify(this.state.newBook))
-    console.log(this.state.newBook);
-		//location.reload()
-  }
+
   render() {
     return (
       <footer>

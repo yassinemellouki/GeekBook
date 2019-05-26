@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Bag from '../../img/shopping-bag.svg';
 import Star from '../../img/star.svg';
 import ReactSVG from 'react-svg';
+import {connect} from 'react-redux';
+import * as bookActions from "../../redux/actions/bookActions";
 
 class Btn extends Component {
   constructor(props) {
@@ -10,30 +12,33 @@ class Btn extends Component {
       to_bag: 0,
       to_fav: false,
     };
-  }
-  componentDidUpdate(props, prevState) {
-    let id = props.bookDetails.id;
-    if (localStorage.getItem('bag_' + id) === null) {
-      let addData = JSON.stringify(this.state.to_bag);
-      window.localStorage.setItem('bag_' + id, addData);
-    } else {
-      let prevData = [window.localStorage.getItem('bag_' + id)];
-      let addData = JSON.stringify(this.state.to_bag);
-      window.localStorage.setItem('bag_' + id, addData);
-    }
+		this.favToggle = this.favToggle.bind(this)
+		this.bagToggle = this.bagToggle.bind(this)
   }
 
-  componentWillMount(props, prevState) {
-    let id = this.props.bookDetails.id;
-      let prevData = window.localStorage.getItem('bag_' + id);
-			this.setState({to_bag: JSON.parse(prevData)})
-  }
+	componentDidUpdate(){
+			console.log(this.props.state.books.bag)
+      let fav_icon = document.getElementById(
+          'fav_' + this.props.bookId,
+        ),
+        fav_bg = fav_icon.querySelector('svg .bg');
+		if(this.props.state.books.favorite.includes(this.props.bookId)){
+        fav_bg.style.fill = 'red';
+      } else {
+       fav_bg.style.fill = 'none';
+      }
+	}
 
-  render() {
-    let addToBag = () => {
-      this.setState({to_bag: this.state.to_bag + 1});
+    favToggle = function() {
+			this.props.dispatch(bookActions.addToFavorite(this.props.bookId))
     };
 
+    bagToggle = function() {
+			this.props.dispatch(bookActions.addToBag(this.props.bookId))
+    };
+
+  render() {
+		/*
     let toggleBag = () => {
       if (this.state.to_bag > 0) {
         let bag_icon = document.getElementById(
@@ -49,37 +54,22 @@ class Btn extends Component {
         }
       }
     };
+		*/
 
-    let favToggle = function() {
-      let fav_icon = document.getElementById(
-          'fav_' + this.props.bookDetails.id,
-        ),
-        fav_bg = fav_icon.querySelector('svg .bg');
-
-      if (this.props.isaFav) {
-        fav_bg.style.fill = 'red';
-      } else {
-        fav_bg.style.fill = 'none';
-      }
-    };
 
     return (
       <div className="card-btns">
         <div className="icons-row">
           <div
-            className="bags-btn"
-            id={'bags_' + this.props.bookDetails.id}
-            onClick={addToBag}>
+            className="bags-btn" id={"bag_"+ this.props.bookId} onClick={this.bagToggle}>
             <div className="btn bag-img">
-              <ReactSVG src={Bag} onInjected={toggleBag} />
+              <ReactSVG src={Bag} />
             </div>
           </div>
           <div
-            onClick={() => this.props.addToFavorite(this.props.bookDetails)}
-            className="favorite-btn"
-            id={'fav_' + this.props.bookDetails.id}>
-            <div className="btn fav-img">
-              <ReactSVG src={Star} onInjected={favToggle.bind(this)} />
+            className="favorite-btn" id={"fav_"+ this.props.bookId} onClick={this.favToggle}>
+            <div className="btn fav-img" >
+              <ReactSVG src={Star} />
             </div>
           </div>
         </div>
@@ -88,4 +78,8 @@ class Btn extends Component {
   }
 }
 
-export default Btn;
+function mapStateToProps(state){
+	return {state}
+}
+
+export default connect(mapStateToProps)(Btn);

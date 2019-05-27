@@ -3,7 +3,6 @@ import * as images from './imgs';
 
 class Cover extends Component {
   render() {
-		console.log(images)
     var img = this.props.img,
       path = images[img];
     if (!this.props.img.includes("://")) {

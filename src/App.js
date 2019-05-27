@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/header';
+import Header from './components/header/';
 import Cards from './components/cards';
 import Footer from './components/footer';
 import {connect} from 'react-redux';

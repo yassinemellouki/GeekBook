@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import * as images from './imgs';
 
 class Cover extends Component {
+
   render() {
     var img = this.props.img,
       path = images[img];

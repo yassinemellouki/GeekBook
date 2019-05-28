@@ -17,8 +17,6 @@ class Btn extends Component {
   }
 
 	componentDidUpdate(){
-			console.log(this.props.state.books.bag)
-
 		//toggle favorite button
       let fav_icon = document.getElementById(
           'fav_' + this.props.bookId,

@@ -4,14 +4,13 @@ import {connect} from 'react-redux';
 
 class FavNotify extends Component {
 
-	componentDidUpdate(){
-		console.log(this.props.books.favorite)
-	}
-
 	render(){
+		console.log(this.props.favBooksList)
 		return(
 		<div className="fav_notify">
-
+			{this.props.favBooksList.map(function(favbook){
+				return <Card key={favbook.id} bookInfos={favbook} />
+			})}
 			</div>	
 		)	
 	}
@@ -19,7 +18,7 @@ class FavNotify extends Component {
 }
 
 function mapStateToProps(state){
-	return {books : state.books}
+	return {favBooksList : state.books.favBooksList}
 }
 
 export default connect(mapStateToProps)(FavNotify);

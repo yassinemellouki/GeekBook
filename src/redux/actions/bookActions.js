@@ -4,6 +4,9 @@ export function addBook(book){
 export function removeBook(bookId){
 	return {type: "REMOVE_BOOK", bookId}
 }
+export function removeFavBook(bookId){
+	return {type: "REMOVE_FAV_BOOK", bookId}
+}
 export function addToFavorite(bookId){
 	return {type: "ADD_TO_FAVORITE", bookId}
 }

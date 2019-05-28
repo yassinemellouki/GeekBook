@@ -4,7 +4,7 @@ import * as bookActions from '../../../redux/actions/bookActions';
 
 class Closebtn extends Component {
 	removeBook = () => {
-		this.props.dispatch(bookActions.removeBook(this.props.bookId))
+		this.props.dispatch(bookActions.removeFavBook(this.props.bookId))
 		console.log(this.props)
 	}
   render() {

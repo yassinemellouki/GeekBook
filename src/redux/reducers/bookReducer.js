@@ -35,6 +35,7 @@
       },
 	 ],
     favorite: [],
+		favBooksList: [],
     bag: [],
   };
 export default function bookReducer(state = initialState, action){
@@ -44,14 +45,51 @@ export default function bookReducer(state = initialState, action){
 		case "REMOVE_BOOK":
 			let newBooksList = state.books.filter(book=> book.id != action.bookId);
 			let newFavoritesList = state.favorite.filter(fav=> fav != action.bookId);
+			let newFavBookList = state.favBooksList.filter(fav=> fav.id != action.bookId);
 			let newBagsList = state.bag.filter(bag=> bag.bagId != action.bookId);
-			return Object.assign({}, state, {bag: newBagsList, favorite: newFavoritesList, books: [...newBooksList]})
+			console.log(newFavBookList)
+			return Object.assign({}, state, {bag: newBagsList, favorite: newFavoritesList, books: [...newBooksList], favBooksList: newFavBookList})
+		case "REMOVE_FAV_BOOK":
+			let newFavBooksList = state.favBooksList.filter(fav=> fav.id != action.bookId);
+			let newFavoritesListTwo = state.favorite.filter(fav=> fav != action.bookId);
+			return Object.assign({}, state, {favorite: newFavoritesListTwo, favBooksList: newFavBooksList} )
 		case "ADD_TO_FAVORITE":
+				let newFavList = state.favorite.filter(fav => fav != action.bookId);
 			if(state.favorite.includes(action.bookId)){
-				let newFavList = state.favorite.filter(fav => fav != action.bookId)
-				return Object.assign({}, state, {favorite: newFavList})
+				let newFavState = [...state.favorite, action.bookId],
+						newFavsArray = newFavState.map((fv) => Number(fv)),
+						books = state.books,
+						favBooksList = state.favBooksList,
+						newFavBooksList;
+				state.books.forEach(function(book){
+					if(newFavsArray.includes(Number(book.id))){
+						newFavsArray.forEach(function(nfa){
+						newFavBooksList = favBooksList.filter(nfv => nfv.id != nfa )
+						})
+					}
+				})
+
+				return Object.assign({}, state, {favorite: newFavList, favBooksList: newFavBooksList})
 			}else{
-				return Object.assign({}, state, {favorite: [...state.favorite, action.bookId]})
+				let newFavState = [...state.favorite, action.bookId],
+						newFavsArray = newFavState.map((fv) => Number(fv)),
+						books = state.books,
+						favBooksList = state.favBooksList,
+						newFavBooksList;
+
+				for(let i=0; i < books.length; i++){
+							if(newFavsArray.includes(action.bookId) == false){
+								console.log("hello")
+								let bookToAdd = books.filter(book => book.id == action.bookId )
+								newFavBooksList = [...favBooksList, ...bookToAdd]
+								console.log(bookToAdd)
+								console.log(newFavBooksList)
+								console.log(books)
+								break;
+							}
+				}
+
+				return Object.assign({}, state, {favorite: newFavState, favBooksList: newFavBooksList})
 			}
 		case "ADD_TO_BAG":
 				let bagBookIndex = state.bag.findIndex( bg => bg.bagId === action.bookId )

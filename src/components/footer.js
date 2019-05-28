@@ -10,8 +10,9 @@ class Footer extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+		let bookId = this.props.books.books.length + 1;
     const target = e.target;
-    let id = uuidv4();
+    let id = bookId.toString();
     let title = document.getElementById('book-title').value;
     let author = document.getElementById('book-author').value;
     let price = document.getElementById('book-price').value,
@@ -78,7 +79,7 @@ class Footer extends Component {
 }
 function mapStateToProps(state){
 	return {
-		book: state
+		books: state.books
 	}
 }
 export default connect(mapStateToProps)(Footer);

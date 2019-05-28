@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Price from './price';
+import Closebtn from './close_btn';
 
 class Details extends Component {
   render() {
@@ -14,6 +15,7 @@ class Details extends Component {
           </p>
         </div>
         <Price price={this.props.price} />
+				<Closebtn bookId={this.props.id} />
       </div>
     );
   }

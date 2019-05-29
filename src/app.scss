@@ -42,9 +42,9 @@ body {
         margin-right: 6rem;
         display: inline-block;
         > div {
-          .fav-img {
+          .fav-img, .bag-img {
             &:hover {
-              .fav_notify {
+              .fav_notify, .bag_notify {
                 display: block !important;
               }
             }
@@ -147,25 +147,35 @@ body {
             }
           }
         }
-        .fav_notify {
-          display: block;
+        .fav_notify, .bag_notify {
+					display: none;
           position: absolute;
           width: 15rem;
           background-color: white;
-          left: -5rem;
+					color: black;
+          left: -7rem;
           top: 4.5rem;
 					border-radius: 1.2rem;
 					padding-left: .6rem;
 					padding-right: .6rem;
 					padding-top: .5rem;
 					z-index: 333;
+					box-shadow: #080808a6 0rem 0.25rem 1rem;
+					&.text{
+						text-align: center !important;
+						color: #252424;
+						font: {
+							family: sans-serif;
+							size: .9rem;
+						}
+					}
 					&:before{
 						content: "";
 						display: block;
 						width:0;
 						position: absolute;
 						top: -2.5rem;
-						left: 5rem;
+						left: 7rem;
 						z-index:444;
 						border: transparent 1.5rem solid;
 						border-bottom-color: white;

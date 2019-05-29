@@ -10,7 +10,7 @@ class Footer extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-		let bookId = this.props.books.books.length + 1;
+		let bookId = Math.floor(Math.random() * 10000);
     const target = e.target;
     let id = bookId.toString();
     let title = document.getElementById('book-title').value;

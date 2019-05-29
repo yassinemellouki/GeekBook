@@ -92,14 +92,44 @@ export default function bookReducer(state = initialState, action){
 				return Object.assign({}, state, {favorite: newFavState, favBooksList: newFavBooksList})
 			}
 		case "ADD_TO_BAG":
-				let bagBookIndex = state.bag.findIndex( bg => bg.bagId === action.bookId )
+				let bagBook = state.books.filter( bg => bg.id === action.bookId )
+			let newBagBook = bagBook.map(function(bgi){
+				let nbgi = Object.assign({}, bgi, {count: 1})
+				return nbgi;
+			});
+			let newReduceCount = bagBook.map(function(bgi){
+				let nbgi = Object.assign({}, bgi, {count: bgi.count + 1})
+				return nbgi;
+			});
+			let toReduce;
+			console.log("bag list")
+			console.log(newBagBook)
+			console.log(newReduceCount)
+			let isIncluded = Object.assign({}, ...newBagBook)
+			console.log(isIncluded)
+			console.log(action.bookId)
+			for(let i = 0; i < state.bag.length; i++ ){
+				console.log(state.bag[i])
+				if(state.bag[i].id == action.bookId){
+					console.log('reduce counter')
+					console.log(newReduceCount)
+					toReduce = newReduceCount;
+					break;
+				}else{
+					toReduce = newBagBook;
+					console.log("toReduce")
+					console.log(toReduce)
+				}				
+			}
+			return Object.assign({}, state, {bag: [...state.bag, ...toReduce]})
+			/*
 			if(bagBookIndex === -1){
-				return Object.assign({}, state, {bag: [...state.bag, {'bagId': action.bookId, 'count': 1}]})
 			}else{
 				let prevCount = state.bag[bagBookIndex].count;
 				let newbags = state.bag.filter(bg => bg.bagId != action.bookId)
 				return Object.assign({}, state, {bag: [...newbags, {'bagId': action.bookId, 'count': prevCount + 1}]})
 			}
+			*/
 		default:
 			return state;
 	}

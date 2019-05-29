@@ -5,6 +5,7 @@ import Star from '../../img/star.svg';
 import ReactSVG from 'react-svg';
 import {connect} from 'react-redux';
 import FavNotify from './notify/FavNotify';
+import BagNotify from './notify/BagNotify';
 
 class Header extends Component {
   state = {
@@ -89,6 +90,7 @@ class Header extends Component {
             <div className="bags-btn">
               <div className="btn bag-img" id="header-bag">
                 <ReactSVG src={Bag} />
+								<BagNotify/>	
               </div>
             </div>
           </div>

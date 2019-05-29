@@ -11,17 +11,19 @@ class FavNotify extends Component {
 
 		console.log("elemFavList")
 		console.log(elemFavList)
+		console.log("elemBagList")
+		console.log(this.props.bagBooksList)
 		{
 			if(this.props.favBooksList.length != 0){
 					return  (
-						<div className="fav_notify">
-				{elemFavList}
+						<div className="bag_notify">
+							{elemFavList}
 						</div>	
 					)
 			}else{
 					return  (
-						<div className="fav_notify text">
-								<h4>There is no listed favorite book.</h4>
+						<div className="bag_notify text">
+								<h4>Shopping bag is empty.</h4>
 						</div>	
 					)
 			}
@@ -39,7 +41,7 @@ class FavNotify extends Component {
 }
 
 function mapStateToProps(state){
-	return {favBooksList : state.books.favBooksList}
+	return {favBooksList : state.books.favBooksList, bagBooksList: state.books.bag}
 }
 
 export default connect(mapStateToProps)(FavNotify);

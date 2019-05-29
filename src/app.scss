@@ -42,26 +42,28 @@ body {
         margin-right: 6rem;
         display: inline-block;
         > div {
-          .fav-img, .bag-img {
+          .fav-img,
+          .bag-img {
             &:hover {
-              .fav_notify, .bag_notify {
+              .fav_notify,
+              .bag_notify {
                 display: block !important;
               }
             }
           }
-					.bag_notify{
-						.fav-close{
-							display: none;
-						}
-					}
-					.fav_notify{
-						.number-btn{
-							display: none;
-						}
-						.close-btn:not(.fav-close){
-							display:none;
-						}
-					}
+          .bag_notify {
+            .fav-close {
+              display: none;
+            }
+          }
+          .fav_notify {
+            .number-btn {
+              display: none;
+            }
+            .close-btn:not(.fav-close) {
+              display: none;
+            }
+          }
           margin: auto 1rem;
           display: inline-block;
           position: relative;
@@ -70,29 +72,29 @@ body {
           }
         }
         .notify-card-section {
-					.number-btn{
-						display: inline-block;
-						margin-right: .3rem;
-						margin-left: .3rem;
-						button{
-						background-color: red;
-						color: white;
-						border: none;
-						padding: .3rem .5rem;
-            border-radius: 0.6rem;
-						}
-					}
+          .number-btn {
+            display: inline-block;
+            margin-right: 0.3rem;
+            margin-left: 0.3rem;
+            button {
+              background-color: red;
+              color: white;
+              border: none;
+              padding: 0.3rem 0.5rem;
+              border-radius: 0.6rem;
+            }
+          }
           .close-btn {
-						display: inline-block;
-						float: right;
-						margin-right: .3rem;
-						button{
-						background-color: red;
-						color: white;
-						border: none;
-						padding: .2rem .5rem;
-            border-radius: 0.6rem;
-						}
+            display: inline-block;
+            float: right;
+            margin-right: 0.3rem;
+            button {
+              background-color: red;
+              color: white;
+              border: none;
+              padding: 0.2rem 0.5rem;
+              border-radius: 0.6rem;
+            }
           }
           width: 100%;
           display: block;
@@ -103,19 +105,19 @@ body {
             background-color: #fff;
             height: auto;
             overflow: hidden;
-            margin: .2rem 0 1.3rem;
-						position: relative;
-						padding: .3rem 0;
-						&:after{
-							content: "";
-							display: block;
-							width: 50%;
-							background-color: $main-col;
-							height: .15rem;
-							position: absolute;
-							bottom: 0;
-							left: 25%;
-						}
+            margin: 0.2rem 0 1.3rem;
+            position: relative;
+            padding: 0.3rem 0;
+            &:after {
+              content: '';
+              display: block;
+              width: 50%;
+              background-color: $main-col;
+              height: 0.15rem;
+              position: absolute;
+              bottom: 0;
+              left: 25%;
+            }
             .card-img {
               float: left;
               width: 30%;
@@ -132,13 +134,13 @@ body {
               height: 100%;
               display: inline-block;
               float: right;
-							text-align: left;
+              text-align: left;
               .book-info {
                 box-sizing: border-box;
                 width: 100%;
                 height: 100%;
                 display: inline-block;
-                padding: .3rem .3rem;
+                padding: 0.3rem 0.3rem;
                 color: $text-col;
                 font: {
                   family: sans-serif;
@@ -147,7 +149,7 @@ body {
                   h2 {
                     text-transform: Capitalize;
                     font: {
-                      size: .8rem;
+                      size: 0.8rem;
                     }
                   }
                 }
@@ -159,11 +161,11 @@ body {
                 }
                 .price-btn {
                   display: inline-block;
-                  padding: 0.4rem .4rem;
+                  padding: 0.4rem 0.4rem;
                   background-color: $btn-col;
                   color: white;
                   font: {
-                    size: .6rem;
+                    size: 0.6rem;
                     weight: 300;
                   }
                   border-radius: 0.6rem;
@@ -172,39 +174,40 @@ body {
             }
           }
         }
-        .fav_notify, .bag_notify {
-					display: none;
+        .fav_notify,
+        .bag_notify {
+          display: none;
           position: absolute;
           width: 15rem;
           background-color: white;
-					color: black;
+          color: black;
           left: -7rem;
           top: 4.5rem;
-					border-radius: 1.2rem;
-					padding-left: .6rem;
-					padding-right: .6rem;
-					padding-top: .5rem;
-					z-index: 333;
-					box-shadow: #080808a6 0rem 0.25rem 1rem;
-					&.text{
-						text-align: center !important;
-						color: #252424;
-						font: {
-							family: sans-serif;
-							size: .9rem;
-						}
-					}
-					&:before{
-						content: "";
-						display: block;
-						width:0;
-						position: absolute;
-						top: -2.5rem;
-						left: 7rem;
-						z-index:444;
-						border: transparent 1.5rem solid;
-						border-bottom-color: white;
-					}
+          border-radius: 1.2rem;
+          padding-left: 0.6rem;
+          padding-right: 0.6rem;
+          padding-top: 0.5rem;
+          z-index: 333;
+          box-shadow: #080808a6 0rem 0.25rem 1rem;
+          &.text {
+            text-align: center !important;
+            color: #252424;
+            font: {
+              family: sans-serif;
+              size: 0.9rem;
+            }
+          }
+          &:before {
+            content: '';
+            display: block;
+            width: 0;
+            position: absolute;
+            top: -2.5rem;
+            left: 7rem;
+            z-index: 444;
+            border: transparent 1.5rem solid;
+            border-bottom-color: white;
+          }
         }
       }
     }

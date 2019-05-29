@@ -126,7 +126,7 @@ body {
                   font-weight: 300;
                   border-radius: 0.6rem; }
         body header .header-btns .icons-row .fav_notify, body header .header-btns .icons-row .bag_notify {
-          display: block;
+          display: none;
           position: absolute;
           width: 15rem;
           background-color: white;

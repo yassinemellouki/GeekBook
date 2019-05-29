@@ -5,7 +5,6 @@ import Btn from './book/btns';
 import Closebtn from './book/close_btn';
 
 class Card extends Component {
-
   render() {
     return (
       <div className="card-section">
@@ -18,7 +17,10 @@ class Card extends Component {
               author={this.props.bookInfos.author}
               price={this.props.bookInfos.price}
             />
-            <Btn bag={this.props.bookInfos.bag} bookId={this.props.bookInfos.id} />
+            <Btn
+              bag={this.props.bookInfos.bag}
+              bookId={this.props.bookInfos.id}
+            />
           </div>
         </div>
       </div>

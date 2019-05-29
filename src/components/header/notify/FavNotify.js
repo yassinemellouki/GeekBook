@@ -8,9 +8,6 @@ class FavNotify extends Component {
 		let elemFavList = this.props.favBooksList.map(function(favbook){
 									return <Card key={favbook.id} bookInfos={favbook} />
 								})
-
-		console.log("elemFavList")
-		console.log(elemFavList)
 		{
 			if(this.props.favBooksList.length != 0){
 					return  (

@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 class Cards extends Component {
 
   render() {
-		console.log(this.props.books)
     return (
       <div className="cards">
         {this.props.books.map(book => (

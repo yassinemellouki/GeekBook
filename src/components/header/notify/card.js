@@ -16,6 +16,7 @@ class Card extends Component {
               author={this.props.bookInfos.author}
               price={this.props.bookInfos.price}
               id={this.props.bookInfos.id}
+              number={this.props.bookInfos.count}
             />
           </div>
         </div>

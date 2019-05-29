@@ -13,3 +13,9 @@ export function addToFavorite(bookId){
 export function addToBag(bookId){
 	return {type: "ADD_TO_BAG", bookId}
 }
+export function addToFavBag(bookId){
+	return {type: "ADD_TO_FAV_BAG", bookId}
+}
+export function removeFromFavBag(bookId){
+	return {type: "REMOVE_FROM_FAV_BAG", bookId}
+}

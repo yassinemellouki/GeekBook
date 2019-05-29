@@ -37,6 +37,7 @@
     favorite: [],
 		favBooksList: [],
     bag: [],
+    fav_bag: [],
   };
 export default function bookReducer(state = initialState, action){
 	switch(action.type){
@@ -47,8 +48,8 @@ export default function bookReducer(state = initialState, action){
 			let newFavoritesList = state.favorite.filter(fav=> fav != action.bookId);
 			let newFavBookList = state.favBooksList.filter(fav=> fav.id != action.bookId);
 			let newBagsList = state.bag.filter(bag=> bag.bagId != action.bookId);
-			console.log(newFavBookList)
-			return Object.assign({}, state, {bag: newBagsList, favorite: newFavoritesList, books: [...newBooksList], favBooksList: newFavBookList})
+			let newFavBagsList = state.fav_bag.filter(bag=> bag.id != action.bookId);
+			return Object.assign({}, state, {bag: newBagsList, favorite: newFavoritesList, books: [...newBooksList], favBooksList: newFavBookList, fav_bag: newFavBagsList})
 		case "REMOVE_FAV_BOOK":
 			let newFavBooksList = state.favBooksList.filter(fav=> fav.id != action.bookId);
 			let newFavoritesListTwo = state.favorite.filter(fav=> fav != action.bookId);
@@ -82,9 +83,6 @@ export default function bookReducer(state = initialState, action){
 								console.log("hello")
 								let bookToAdd = books.filter(book => book.id == action.bookId )
 								newFavBooksList = [...favBooksList, ...bookToAdd]
-								console.log(bookToAdd)
-								console.log(newFavBooksList)
-								console.log(books)
 								break;
 							}
 				}
@@ -92,44 +90,33 @@ export default function bookReducer(state = initialState, action){
 				return Object.assign({}, state, {favorite: newFavState, favBooksList: newFavBooksList})
 			}
 		case "ADD_TO_BAG":
-				let bagBook = state.books.filter( bg => bg.id === action.bookId )
-			let newBagBook = bagBook.map(function(bgi){
-				let nbgi = Object.assign({}, bgi, {count: 1})
-				return nbgi;
-			});
-			let newReduceCount = bagBook.map(function(bgi){
-				let nbgi = Object.assign({}, bgi, {count: bgi.count + 1})
-				return nbgi;
-			});
-			let toReduce;
-			console.log("bag list")
-			console.log(newBagBook)
-			console.log(newReduceCount)
-			let isIncluded = Object.assign({}, ...newBagBook)
-			console.log(isIncluded)
-			console.log(action.bookId)
-			for(let i = 0; i < state.bag.length; i++ ){
-				console.log(state.bag[i])
-				if(state.bag[i].id == action.bookId){
-					console.log('reduce counter')
-					console.log(newReduceCount)
-					toReduce = newReduceCount;
-					break;
-				}else{
-					toReduce = newBagBook;
-					console.log("toReduce")
-					console.log(toReduce)
-				}				
-			}
-			return Object.assign({}, state, {bag: [...state.bag, ...toReduce]})
-			/*
+				let bagBookIndex = state.bag.findIndex( bg => bg.bagId === action.bookId )
 			if(bagBookIndex === -1){
+				return Object.assign({}, state, {bag: [...state.bag, {'bagId': action.bookId, 'count': 1}]})
 			}else{
 				let prevCount = state.bag[bagBookIndex].count;
 				let newbags = state.bag.filter(bg => bg.bagId != action.bookId)
 				return Object.assign({}, state, {bag: [...newbags, {'bagId': action.bookId, 'count': prevCount + 1}]})
 			}
-			*/
+		case "ADD_TO_FAV_BAG":
+			let fav_bag_book = state.books.filter(book => book.id == action.bookId);
+			let new_fav_bag_book = Object.assign({}, ...fav_bag_book, {'count': 1});
+			let isHere = false;
+			for(let i = 0; i < state.fav_bag.length; i++){
+				if(state.fav_bag[i].id == action.bookId){
+					isHere = true;
+					let prevCount = state.fav_bag[i].count;
+					new_fav_bag_book = fav_bag_book.filter(nfv => nfv.id != action.bookId)
+					new_fav_bag_book = Object.assign({}, ...fav_bag_book, {'count': prevCount + 1});
+					break;
+				}
+			}
+			let new_state_fav_bag_book = state.fav_bag.filter(sfv => sfv.id != action.bookId)
+			return Object.assign({}, state, {fav_bag: [...new_state_fav_bag_book, {...new_fav_bag_book}]})
+		case "REMOVE_FROM_FAV_BAG":
+			let anewFavBagsList = state.fav_bag.filter(bag=> bag.id != action.bookId);
+			let anewBagsList = state.bag.filter(bag=> bag.bagId != action.bookId);
+			return Object.assign({}, state, {fav_bag: anewFavBagsList, bag: anewBagsList} )
 		default:
 			return state;
 	}

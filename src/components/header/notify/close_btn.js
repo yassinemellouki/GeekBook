@@ -9,7 +9,7 @@ class Closebtn extends Component {
 	}
   render() {
     return (
-      <div onClick={this.removeBook} className="close-btn">
+      <div onClick={this.removeBook} className="fav-close close-btn">
 				<button>Delete</button>
       </div>
     );

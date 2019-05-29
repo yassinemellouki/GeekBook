@@ -34,9 +34,126 @@ body {
         display: inline-block; }
         body header .header-btns .icons-row > div {
           margin: auto 1rem;
-          display: inline-block; }
+          display: inline-block;
+          position: relative; }
+          body header .header-btns .icons-row > div .fav-img:hover .fav_notify, body header .header-btns .icons-row > div .fav-img:hover .bag_notify, body header .header-btns .icons-row > div .bag-img:hover .fav_notify, body header .header-btns .icons-row > div .bag-img:hover .bag_notify {
+            display: block !important; }
+          body header .header-btns .icons-row > div .bag_notify .fav-close {
+            display: none; }
+          body header .header-btns .icons-row > div .fav_notify .number-btn {
+            display: none; }
+          body header .header-btns .icons-row > div .fav_notify .close-btn:not(.fav-close) {
+            display: none; }
           body header .header-btns .icons-row > div svg {
             height: 3rem; }
+        body header .header-btns .icons-row .notify-card-section {
+          width: 100%;
+          display: block; }
+          body header .header-btns .icons-row .notify-card-section .number-btn {
+            display: inline-block;
+            margin-right: .3rem;
+            margin-left: .3rem; }
+            body header .header-btns .icons-row .notify-card-section .number-btn button {
+              background-color: red;
+              color: white;
+              border: none;
+              padding: .3rem .5rem;
+              border-radius: 0.6rem; }
+          body header .header-btns .icons-row .notify-card-section .close-btn {
+            display: inline-block;
+            float: right;
+            margin-right: .3rem; }
+            body header .header-btns .icons-row .notify-card-section .close-btn button {
+              background-color: red;
+              color: white;
+              border: none;
+              padding: .2rem .5rem;
+              border-radius: 0.6rem; }
+          @media only screen and (max-width: 767px) {
+            body header .header-btns .icons-row .notify-card-section {
+              width: 100% !important; } }
+          body header .header-btns .icons-row .notify-card-section .book-card {
+            background-color: #fff;
+            height: auto;
+            overflow: hidden;
+            margin: .2rem 0 1.3rem;
+            position: relative;
+            padding: .3rem 0; }
+            body header .header-btns .icons-row .notify-card-section .book-card:after {
+              content: "";
+              display: block;
+              width: 50%;
+              background-color: #42369a;
+              height: .15rem;
+              position: absolute;
+              bottom: 0;
+              left: 25%; }
+            body header .header-btns .icons-row .notify-card-section .book-card .card-img {
+              float: left;
+              width: 30%;
+              height: 100%;
+              display: inline-block; }
+              body header .header-btns .icons-row .notify-card-section .book-card .card-img img {
+                margin: auto;
+                width: 100%;
+                height: 100%; }
+            body header .header-btns .icons-row .notify-card-section .book-card .card-content {
+              width: 70%;
+              height: 100%;
+              display: inline-block;
+              float: right;
+              text-align: left; }
+              body header .header-btns .icons-row .notify-card-section .book-card .card-content .book-info {
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+                padding: .3rem .3rem;
+                color: #434343;
+                font-family: sans-serif; }
+                body header .header-btns .icons-row .notify-card-section .book-card .card-content .book-info .book-title h2 {
+                  text-transform: Capitalize;
+                  font-size: .8rem; }
+                body header .header-btns .icons-row .notify-card-section .book-card .card-content .book-info .book-author {
+                  color: #868686;
+                  font-size: 0.5rem; }
+                body header .header-btns .icons-row .notify-card-section .book-card .card-content .book-info .price-btn {
+                  display: inline-block;
+                  padding: 0.4rem .4rem;
+                  background-color: #7971ac;
+                  color: white;
+                  font-size: .6rem;
+                  font-weight: 300;
+                  border-radius: 0.6rem; }
+        body header .header-btns .icons-row .fav_notify, body header .header-btns .icons-row .bag_notify {
+          display: block;
+          position: absolute;
+          width: 15rem;
+          background-color: white;
+          color: black;
+          left: -7rem;
+          top: 4.5rem;
+          border-radius: 1.2rem;
+          padding-left: .6rem;
+          padding-right: .6rem;
+          padding-top: .5rem;
+          z-index: 333;
+          box-shadow: #080808a6 0rem 0.25rem 1rem; }
+          body header .header-btns .icons-row .fav_notify.text, body header .header-btns .icons-row .bag_notify.text {
+            text-align: center !important;
+            color: #252424;
+            font-family: sans-serif;
+            font-size: .9rem; }
+          body header .header-btns .icons-row .fav_notify:before, body header .header-btns .icons-row .bag_notify:before {
+            content: "";
+            display: block;
+            width: 0;
+            position: absolute;
+            top: -2.5rem;
+            left: 7rem;
+            z-index: 444;
+            border: transparent 1.5rem solid;
+            border-bottom-color: white; }
   body .cards-body .card-section {
     position: relative;
     width: 760px;
@@ -192,14 +309,14 @@ body {
         body footer .container .form-group label {
           display: block;
           padding: 0.5rem 0;
-          letter-spacing: .15rem;
-          margin: .5rem .3rem;
+          letter-spacing: 0.15rem;
+          margin: 0.5rem 0.3rem;
           font-size: 1.2rem; }
         body footer .container .form-group.btn-form input {
           background: none !important;
           color: white;
           border: 1px solid white;
-          transition: background-color .2s linear;
+          transition: background-color 0.2s linear;
           cursor: pointer; }
           body footer .container .form-group.btn-form input:hover {
             background-color: green !important; }

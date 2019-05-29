@@ -20,7 +20,6 @@ class Header extends Component {
         fav_bg = fav_icon.querySelector('svg .bg'),
         text = fav_icon.getElementsByTagName('text')[0],
 				favorite_length = this.props.state.books.favorite.length;
-		console.log(favorite_length)
 		if(this.props.state.books.favorite.length > 0){
         fav_bg.style.fill = 'red';
         text.innerHTML = favorite_length;
@@ -52,6 +51,7 @@ class Header extends Component {
 			}
       } else {
        bag_bg.style.fill = 'none';
+				text_count.innerHTML = ''
       }
 	}
 

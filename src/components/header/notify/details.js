@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Price from './price';
 import Closebtn from './close_btn';
+import CloseBagbtn from './close_btn_bag';
+import Numbers from './numbers';
 
 class Details extends Component {
   render() {
@@ -16,6 +18,8 @@ class Details extends Component {
         </div>
         <Price price={this.props.price} />
 				<Closebtn bookId={this.props.id} />
+				<Numbers number ={this.props}  />
+				<CloseBagbtn bookId={this.props.id} />
       </div>
     );
   }

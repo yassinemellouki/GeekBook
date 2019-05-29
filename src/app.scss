@@ -49,6 +49,19 @@ body {
               }
             }
           }
+					.bag_notify{
+						.fav-close{
+							display: none;
+						}
+					}
+					.fav_notify{
+						.number-btn{
+							display: none;
+						}
+						.close-btn:not(.fav-close){
+							display:none;
+						}
+					}
           margin: auto 1rem;
           display: inline-block;
           position: relative;
@@ -57,6 +70,18 @@ body {
           }
         }
         .notify-card-section {
+					.number-btn{
+						display: inline-block;
+						margin-right: .3rem;
+						margin-left: .3rem;
+						button{
+						background-color: red;
+						color: white;
+						border: none;
+						padding: .3rem .5rem;
+            border-radius: 0.6rem;
+						}
+					}
           .close-btn {
 						display: inline-block;
 						float: right;
@@ -65,7 +90,7 @@ body {
 						background-color: red;
 						color: white;
 						border: none;
-						padding: .3rem .5rem;
+						padding: .2rem .5rem;
             border-radius: 0.6rem;
 						}
           }

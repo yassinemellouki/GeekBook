@@ -1,47 +1,29 @@
 import React, {Component} from 'react';
-import Card from './Card'
+import Card from './Card';
 import {connect} from 'react-redux';
 
 class FavNotify extends Component {
+  render() {
+    let elemBagList = this.props.bagBooksList.map(function(bagbook) {
+      return <Card key={bagbook.id} bookInfos={bagbook} />;
+    });
 
-	render(){
-		let elemFavList = this.props.favBooksList.map(function(favbook){
-									return <Card key={favbook.id} bookInfos={favbook} />
-								})
-
-		console.log("elemFavList")
-		console.log(elemFavList)
-		console.log("elemBagList")
-		console.log(this.props.bagBooksList)
-		{
-			if(this.props.favBooksList.length != 0){
-					return  (
-						<div className="bag_notify">
-							{elemFavList}
-						</div>	
-					)
-			}else{
-					return  (
-						<div className="bag_notify text">
-								<h4>Shopping bag is empty.</h4>
-						</div>	
-					)
-			}
-
-		}
-		/*
-		return(
-			{this.props.favBooksList.map(function(favbook){
-				return <Card key={favbook.id} bookInfos={favbook} />
-			})}
-		)	
-			*/
-	}
-
+    {
+      if (this.props.bagBooksList.length != 0) {
+        return <div className="bag_notify">{elemBagList}</div>;
+      } else {
+        return (
+          <div className="bag_notify text">
+            <h4>Shopping bag is empty.</h4>
+          </div>
+        );
+      }
+    }
+  }
 }
 
-function mapStateToProps(state){
-	return {favBooksList : state.books.favBooksList, bagBooksList: state.books.bag}
+function mapStateToProps(state) {
+  return {bagBooksList: state.books.fav_bag};
 }
 
 export default connect(mapStateToProps)(FavNotify);

@@ -18,7 +18,7 @@ class Card extends Component {
               author={this.props.bookInfos.author}
               price={this.props.bookInfos.price}
             />
-            <Btn bookId={this.props.bookInfos.id} />
+            <Btn bag={this.props.bookInfos.bag} bookId={this.props.bookInfos.id} />
           </div>
         </div>
       </div>

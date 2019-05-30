@@ -3,8 +3,6 @@ import Cover from './cover';
 import Details from './details';
 
 class Card extends Component {
-
-
   render() {
     return (
       <div className="notify-card-section">

@@ -10,19 +10,18 @@ class Footer extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-		let bookId = Math.floor(Math.random() * 10000);
+    let bookId = Math.floor(Math.random() * 10000);
     const target = e.target;
     let id = bookId.toString();
     let title = document.getElementById('book-title').value;
     let author = document.getElementById('book-author').value;
     let price = document.getElementById('book-price').value,
-    newBook = {id, title, author, cover: 'https://placehold.it/500', price};
-		this.props.dispatch(bookActions.addBook(newBook));
+      newBook = {id, title, author, cover: 'https://placehold.it/500', price};
+    this.props.dispatch(bookActions.addBook(newBook));
     document.getElementById('book-title').value = '';
     document.getElementById('book-author').value = '';
     document.getElementById('book-price').value = '';
   };
-
 
   render() {
     return (
@@ -77,9 +76,9 @@ class Footer extends Component {
     );
   }
 }
-function mapStateToProps(state){
-	return {
-		books: state.books
-	}
+function mapStateToProps(state) {
+  return {
+    books: state.books,
+  };
 }
 export default connect(mapStateToProps)(Footer);

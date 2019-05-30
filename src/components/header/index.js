@@ -9,53 +9,51 @@ import BagNotify from './notify/BagNotify';
 
 class Header extends Component {
   state = {
-		renderFav: 0,
+    renderFav: 0,
     favorite: [this.props.toFav],
-		favs_length: 0,
+    favs_length: 0,
   };
 
-	componentDidUpdate(){
-		//toggle favorite button
-      let fav_icon = document.getElementById("header-fav"),
-        fav_bg = fav_icon.querySelector('svg .bg'),
-        text = fav_icon.getElementsByTagName('text')[0],
-				favorite_length = this.props.state.books.favorite.length;
-		if(this.props.state.books.favorite.length > 0){
-        fav_bg.style.fill = 'red';
-        text.innerHTML = favorite_length;
-			if(favorite_length > 9){
-					text.setAttribute('transform', 'matrix(1.19 0 0 1 120 340)');
-			}else{
-				text.setAttribute('transform', 'matrix(1.19 0 0 1 190.1 317.1)');
-			}
+  componentDidUpdate() {
+    //toggle favorite button
+    let fav_icon = document.getElementById('header-fav'),
+      fav_bg = fav_icon.querySelector('svg .bg'),
+      text = fav_icon.getElementsByTagName('text')[0],
+      favorite_length = this.props.state.books.favorite.length;
+    if (this.props.state.books.favorite.length > 0) {
+      fav_bg.style.fill = 'red';
+      text.innerHTML = favorite_length;
+      if (favorite_length > 9) {
+        text.setAttribute('transform', 'matrix(1.19 0 0 1 120 340)');
       } else {
-       fav_bg.style.fill = 'none';
-        text.innerHTML ="";
+        text.setAttribute('transform', 'matrix(1.19 0 0 1 190.1 317.1)');
       }
+    } else {
+      fav_bg.style.fill = 'none';
+      text.innerHTML = '';
+    }
 
-		//toggle bag button
-      let bag_icon = document.getElementById("header-bag"),
-        bag_bg = bag_icon.querySelector('svg .bg'),
-        text_count = bag_icon.getElementsByTagName('text')[0],
-				bag_length = this.props.state.books.bag.length;
-		if(this.props.state.books.bag.length > 0){
-        bag_bg.style.fill = 'red';
-				let total_bag_counts = 0;
-			this.props.state.books.bag.forEach(function(bg){
-				total_bag_counts += bg.count
-				text_count.setAttribute('transform', 'matrix(1.19 0 0 1 135 366.5)');
-			})
-        text_count.innerHTML = total_bag_counts;
-			if(total_bag_counts > 9){
-					text_count.setAttribute('transform', 'matrix(1.19 0 0 1 80 366.5)');
-			}
-      } else {
-       bag_bg.style.fill = 'none';
-				text_count.innerHTML = ''
+    //toggle bag button
+    let bag_icon = document.getElementById('header-bag'),
+      bag_bg = bag_icon.querySelector('svg .bg'),
+      text_count = bag_icon.getElementsByTagName('text')[0],
+      bag_length = this.props.state.books.bag.length;
+    if (this.props.state.books.bag.length > 0) {
+      bag_bg.style.fill = 'red';
+      let total_bag_counts = 0;
+      this.props.state.books.bag.forEach(function(bg) {
+        total_bag_counts += bg.count;
+        text_count.setAttribute('transform', 'matrix(1.19 0 0 1 135 366.5)');
+      });
+      text_count.innerHTML = total_bag_counts;
+      if (total_bag_counts > 9) {
+        text_count.setAttribute('transform', 'matrix(1.19 0 0 1 80 366.5)');
       }
-	}
-
-
+    } else {
+      bag_bg.style.fill = 'none';
+      text_count.innerHTML = '';
+    }
+  }
 
   render() {
     return (
@@ -84,13 +82,13 @@ class Header extends Component {
             <div className="favorite-btn">
               <div className="btn fav-img" id="header-fav">
                 <ReactSVG src={Star} />
-								<FavNotify/>	
+                <FavNotify />
               </div>
             </div>
             <div className="bags-btn">
               <div className="btn bag-img" id="header-bag">
                 <ReactSVG src={Bag} />
-								<BagNotify/>	
+                <BagNotify />
               </div>
             </div>
           </div>
@@ -100,9 +98,8 @@ class Header extends Component {
   }
 }
 
-
-function mapStateToProps(state){
-	return {state}
+function mapStateToProps(state) {
+  return {state};
 }
 
 export default connect(mapStateToProps)(Header);

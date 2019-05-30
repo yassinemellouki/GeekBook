@@ -17,9 +17,9 @@ class Details extends Component {
           </p>
         </div>
         <Price price={this.props.price} />
-				<Closebtn bookId={this.props.id} />
-				<Numbers number ={this.props}  />
-				<CloseBagbtn bookId={this.props.id} />
+        <Closebtn bookId={this.props.id} />
+        <Numbers number={this.props} />
+        <CloseBagbtn bookId={this.props.id} />
       </div>
     );
   }

@@ -3,7 +3,7 @@ import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import books from './bookReducer';
 
 const rootReducer = combineReducers({
-	books: books
-})
+  books: books,
+});
 
 export default rootReducer;

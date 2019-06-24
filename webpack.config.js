@@ -1,4 +1,4 @@
-const HtmlWebPackPlugin = require('Html-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
@@ -67,6 +67,6 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
-    port: 888,
+    port: 8881,
   },
 };
